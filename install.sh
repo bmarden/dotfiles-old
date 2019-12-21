@@ -17,7 +17,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
 # List of files/folders to symlink in ${homedir}
-files="zshrc bashrc"
+files="zshrc p10k.zsh"
 
 # change to the dotfiles directory
 echo "Changing to the ${dotfiledir} directory"

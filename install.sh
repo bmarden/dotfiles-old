@@ -13,6 +13,9 @@ dotfiledir=${homedir}/dotfiles
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
+# Powerlevel 10k installation
+git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+
 # List of files/folders to symlink in ${homedir}
 files="zshrc bashrc"
 
@@ -29,9 +32,6 @@ done
 
 # Download git autocomplete
 curl "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash" > ${homedir}/.git-completion.bash
-
-# Powerlevel 10k installation
-git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
 # Run brew install script
 ./brew.sh 

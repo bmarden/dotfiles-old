@@ -1,0 +1,52 @@
+
+rkbench.settings.editor": "json",
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontSize": 14,
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.rendererType": "canvas",
+    "terminal.integrated.fontSize": 14,
+    "workbench.iconTheme": "vscode-icons",
+    "editor.minimap.maxColumn": 120,
+    "editor.wordWrap": "off",
+    "editor.formatOnSave": true,
+    "C_Cpp.clang_format_path": "/usr/bin/clang-format",
+    "C_Cpp.clang_format_fallbackStyle": "{ColumnLimit: 0}",
+    "workbench.colorTheme": "Horizon",
+    // Vim commands
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.overrideCopy": true,
+    "vim.easymotion": true,
+    "vim.easymotionMarkerFontFamily": "Fira Code",
+    "vim.easymotionMarkerForegroundColorTwoChar": "red",
+    "vim.easymotionMarkerForegroundColorOneChar": "red",
+    "vim.easymotionMarkerBackgroundColor": "#1f1e1f",
+    "vim.easymotionMarkerHeight": 16,
+    "vim.easymotionMarkerWidthPerChar": 10,
+    "vim.leader": ",",
+    "vim.statusBarColorControl": true,
+    "vim.useSystemClipboard": true,
+    "vim.highlightedyank.enable": true,
+    "vim.vimrc.enable": true,
+    "vim.useCtrlKeys": true,
+    // "vim.vimrc.path": "/home/bmarden/",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#5f00af",
+        "statusBar.noFolderBackground": "#5f00af",
+        "statusBar.debuggingBackground": "#5f00af"
+    },
+    "C_Cpp.default.cStandard": "c99",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "vsicons.dontShowNewVersionMessage": true,
+    "editor.multiCursorModifier": "ctrlCmd"
+}

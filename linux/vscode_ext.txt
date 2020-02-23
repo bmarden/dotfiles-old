@@ -1,0 +1,10 @@
+dart-dart-code.dart-code-3.8.1
+dart-code.flutter-3.8.1
+dracula-theme.theme-dracula-2.20.0
+equinusocio.vsc-material-theme-icons-1.1.4
+faustinoaq.lex-flex-yacc-bison-0.0.3
+jolaleye.horizon-theme-vscode-2.0.2
+luniclynx.lex-0.1.0
+ms-python.python-2020.2.64397
+ms-vscode.cpptools-0.26.3
+vscodevim.vim-1.12.4

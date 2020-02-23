@@ -1,12 +1,11 @@
-
-rkbench.settings.editor": "json",
+{
+    "workbench.settings.editor": "json",
     "editor.fontLigatures": true,
-    "editor.fontFamily": "Fira Code",
+    "editor.fontFamily": "'FiraCode Nerd Font'",
     "editor.fontSize": 14,
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.rendererType": "canvas",
     "terminal.integrated.fontSize": 14,
-    "workbench.iconTheme": "vscode-icons",
     "editor.minimap.maxColumn": 120,
     "editor.wordWrap": "off",
     "editor.formatOnSave": true,
@@ -27,7 +26,7 @@ rkbench.settings.editor": "json",
     ],
     "vim.overrideCopy": true,
     "vim.easymotion": true,
-    "vim.easymotionMarkerFontFamily": "Fira Code",
+    "vim.easymotionMarkerFontFamily": "FiraCode Nerd Font",
     "vim.easymotionMarkerForegroundColorTwoChar": "red",
     "vim.easymotionMarkerForegroundColorOneChar": "red",
     "vim.easymotionMarkerBackgroundColor": "#1f1e1f",
@@ -41,12 +40,13 @@ rkbench.settings.editor": "json",
     "vim.useCtrlKeys": true,
     // "vim.vimrc.path": "/home/bmarden/",
     "workbench.colorCustomizations": {
-        "statusBar.background": "#5f00af",
-        "statusBar.noFolderBackground": "#5f00af",
-        "statusBar.debuggingBackground": "#5f00af"
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
     },
     "C_Cpp.default.cStandard": "c99",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
     "vsicons.dontShowNewVersionMessage": true,
-    "editor.multiCursorModifier": "ctrlCmd"
+    "editor.multiCursorModifier": "ctrlCmd",
+    "terminal.integrated.shell.linux": "/usr/bin/zsh"
 }

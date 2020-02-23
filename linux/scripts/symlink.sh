@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# cd ..
+cd ..
 
 dotfilesDir=$(pwd)
 
@@ -31,3 +31,5 @@ function linkDotfile {
 linkDotfile .zshrc 
 linkDotfile .gitconfig
 linkDotfile .vimrc 
+linkDotfile .p10k.zsh
+linkDotfile .tmux.conf

@@ -18,7 +18,14 @@ install firefox
 install brave-browser
 install curl
 install git
-install vim
-install neovim
+install vim 
+install xclip
+install bison
+install flex 
+install valgrind
+
+# Useless things
+install figlet
+install lolcat
 
 

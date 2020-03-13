@@ -110,8 +110,25 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias cursem='cd ~/Dropbox/School/csu_spring20/'
+alias vim="nvim"
 #
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export PATH="$PATH:/Users/bmarden/Documents/flutter/bin:/Users/bmarden/Library/Android/sdk/platform-tools"
+
+#POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+POWERLEVEL9K_SHORTEN_STRATEGY=truncate_folders
+
+
+#
+#POWERLEVEL9K_DIR_HOME_BACKGROUND="clear"
+#POWERLEVEL9K_DIR_HOME_FOREGROUND="000"
+#POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="clear"
+#POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="012"
+#POWERLEVEL9K_DIR_PATH_SEPARATOR="%F{008}/%F{cyan}"
+
+set -o vi

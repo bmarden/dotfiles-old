@@ -33,3 +33,4 @@ linkDotfile .gitconfig
 linkDotfile .vimrc 
 linkDotfile .p10k.zsh
 linkDotfile .tmux.conf
+#linkDotfile .config/nvim/.init.vim

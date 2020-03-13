@@ -1,7 +1,8 @@
 {
+    "workbench.settings.useSplitJSON": true,
     "workbench.settings.editor": "json",
     "editor.fontLigatures": true,
-    "editor.fontFamily": "'FiraCode Nerd Font'",
+    "editor.fontFamily": "FiraCode Nerd Font, Retina",
     "editor.fontSize": 14,
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.rendererType": "canvas",
@@ -10,8 +11,15 @@
     "editor.wordWrap": "off",
     "editor.formatOnSave": true,
     "C_Cpp.clang_format_path": "/usr/bin/clang-format",
-    "C_Cpp.clang_format_fallbackStyle": "{ColumnLimit: 0}",
-    "workbench.colorTheme": "Horizon",
+    "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
+    // Python
+    "code-runner.executorMap": {
+        "python": "$pythonPath -u $fullFileName",
+    },
+    "code-runner.showExecutionMessage": false,
+    "code-runner.clearPreviousOutput": true,
+    // Flutter
+    "dart.previewFlutterUiGuides": true,
     // Vim commands
     "vim.insertModeKeyBindings": [
         {
@@ -22,8 +30,9 @@
             "after": [
                 "<Esc>"
             ]
-        }
+        },
     ],
+    "vscode-neovim.neovimPath": "/snap/bin/nvim",
     "vim.overrideCopy": true,
     "vim.easymotion": true,
     "vim.easymotionMarkerFontFamily": "FiraCode Nerd Font",
@@ -33,20 +42,31 @@
     "vim.easymotionMarkerHeight": 16,
     "vim.easymotionMarkerWidthPerChar": 10,
     "vim.leader": ",",
-    "vim.statusBarColorControl": true,
     "vim.useSystemClipboard": true,
     "vim.highlightedyank.enable": true,
     "vim.vimrc.enable": true,
     "vim.useCtrlKeys": true,
-    // "vim.vimrc.path": "/home/bmarden/",
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#005f5f",
-        "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f"
-    },
+    "vim.vimrc.path": "/home/bmarden/",
+    // "workbench.colorCustomizations": {
+    //     "statusBar.background": "#005f5f",
+    //     "statusBar.noFolderBackground": "#005f5f",
+    //     "statusBar.debuggingBackground": "#005f5f"
+    // },
     "C_Cpp.default.cStandard": "c99",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
     "vsicons.dontShowNewVersionMessage": true,
     "editor.multiCursorModifier": "ctrlCmd",
-    "terminal.integrated.shell.linux": "/usr/bin/zsh"
+    "terminal.integrated.shell.linux": "/usr/bin/zsh",
+    "C_Cpp.clang_format_style": "{BasedOnStyle: Google, UseTab: Never, IndentWidth: 4, TabWidth: 4, ColumnLimit: 0}",
+    "workbench.iconTheme": "Monokai Pro Icons",
+    "workbench.colorTheme": "Monokai Pro",
+    "editor.acceptSuggestionOnEnter": "off",
+    "gitlens.views.repositories.location": "gitlens",
+    "gitlens.views.fileHistory.location": "gitlens",
+    "gitlens.views.lineHistory.location": "gitlens",
+    "gitlens.views.compare.location": "gitlens",
+    "gitlens.views.search.location": "gitlens",
+    "dart.autoImportCompletions": true,
+    "vscode-neovim.neovimInitPath": "/home/bmarden/.config/nvim/init.vim",
+    "dart.runPubGetOnPubspecChanges": false
 }

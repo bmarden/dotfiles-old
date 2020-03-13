@@ -110,6 +110,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim='nvim'
 alias cursem='cd Dropbox/School/csu_spring20/'
+# Load nvidia-settings to correct display
+alias nv='sudo nvidia-settings --load-config-only'
+alias john='/home/bmarden/programs/john/run/john'
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

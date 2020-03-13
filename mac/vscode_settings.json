@@ -1,0 +1,183 @@
+{
+    // General editor settings
+    "workbench.settings.editor": "json",
+    "workbench.settings.useSplitJSON": true,
+    "editor.fontSize": 13,
+    "editor.tabSize": 4,
+    "editor.tokenColorCustomizations": {
+        "[Horizon]": {
+            "comments": "#97979b33"
+        }
+    },
+    "editor.fontFamily": "FiraCode Nerd Font",
+    // "editor.fontFamily": "SauceCodePro Nerd Font",
+    "editor.fontWeight": "400",
+    "editor.fontLigatures": true,
+    "window.zoomLevel": 0,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "explorer.confirmDelete": false,
+    // Terminal settings 
+    "workbench.colorCustomizations": {
+        // The background is optional
+        "terminal.background": "#323336",
+        "terminalCursor.background": "#282a36",
+        "terminalCursor.foreground": "#97979b",
+        "terminal.selectionBackground": "#97979b33",
+        "terminal.foreground": "#eff0eb",
+        "terminal.ansiBlack": "#282a36",
+        "terminal.ansiRed": "#ff5c57",
+        "terminal.ansiGreen": "#5af78e",
+        "terminal.ansiYellow": "#f3f99d",
+        // "terminal.ansiBlue": "#57c7ff",
+        "terminal.ansiBlue": "#0084ff",
+        "terminal.ansiMagenta": "#ff6ac1",
+        "terminal.ansiCyan": "#9aedfe",
+        "terminal.ansiWhite": "#f1f1f0",
+        "terminal.ansiBrightBlack": "#686868",
+        "terminal.ansiBrightRed": "#ff5c57",
+        "terminal.ansiBrightGreen": "#5af78e",
+        "terminal.ansiBrightYellow": "#f3f99d",
+        "terminal.ansiBrightBlue": "#57c7ff",
+        "terminal.ansiBrightMagenta": "#ff6ac1",
+        "terminal.ansiBrightCyan": "#9aedfe",
+        "terminal.ansiBrightWhite": "#eff0eb",
+        "editorBracketMatch.background": "#acacac9f",
+        "editorBracketMatch.border": "#ffffff"
+    },
+    "terminal.external.osxExec": "iterm2",
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "terminal.integrated.fontFamily": "MeslolGL Nerd Font Mono",
+    "terminal.integrated.fontSize": 13,
+    "vsicons.dontShowNewVersionMessage": true,
+    "editor.formatOnSave": true,
+    // Vim Settings
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.leader": ",",
+    "vim.sneak": true,
+    "vim.sneakReplacesF": true,
+    "vim.highlightedyank.enable": true,
+    "vim.overrideCopy": true,
+    "vim.useSystemClipboard": true,
+    "vim.easymotion": true,
+    "vim.easymotionMarkerBackgroundColor": "black",
+    "vim.easymotionMarkerForegroundColorOneChar": "red",
+    "vim.easymotionMarkerForegroundColorTwoChar": "red",
+    "vim.easymotionMarkerFontFamily": "SauceCodePro Nerd Font",
+    // C_Cpp settings 
+    "C_Cpp.clang_format_fallbackStyle": "Mozilla",
+    "C_Cpp.default.cppStandard": "c++11",
+    "C_Cpp.clang_format_style": "{BasedOnStyle: Google, ColumnLimit: 0, UseTab: Never, IndentWidth: 4, TabWidth: 4}",
+    "C_Cpp.default.cStandard": "c99",
+    "latex-workshop.view.pdf.viewer": "tab",
+    // Python settings 
+    "python.linting.pylintPath": "pylint",
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint_django"
+    ],
+    "python.linting.pylintEnabled": true,
+    "python.jediEnabled": false,
+    "python.formatting.provider": "autopep8",
+    "code-runner.executorMap": {
+        "python": "$pythonPath -u $fullFileName"
+    },
+    "code-runner.showExecutionMessage": false,
+    "code-runner.clearPreviousOutput": true,
+    "python.linting.enabled": true,
+    "workbench.iconTheme": "Monokai Pro (Filter Ristretto) Icons",
+    "files.associations": {
+        "*.gpl": "cpp"
+    },
+    "gitlens.views.repositories.location": "gitlens",
+    "gitlens.views.fileHistory.location": "gitlens",
+    "gitlens.views.lineHistory.location": "gitlens",
+    "gitlens.views.compare.location": "gitlens",
+    "gitlens.views.search.location": "gitlens",
+    "editor.acceptSuggestionOnEnter": "off",
+    "dart.previewFlutterUiGuides": true,
+    "workbench.colorTheme": "Monokai Pro (Filter Ristretto)",
+    "better-comments.tags": [
+        {
+            "tag": "!",
+            "color": "#FF2D00",
+            "strikethrough": false,
+            "backgroundColor": "transparent"
+        },
+        {
+            "tag": "?",
+            "color": "#3498DB",
+            "strikethrough": false,
+            "backgroundColor": "transparent"
+        },
+        {
+            "tag": "//",
+            "color": "#81818181",
+            "strikethrough": true,
+            "backgroundColor": "transparent"
+        },
+        {
+            "tag": "todo",
+            "color": "#FF8C00",
+            "strikethrough": false,
+            "backgroundColor": "transparent"
+        },
+        {
+            "tag": "*",
+            "color": "#98C379",
+            "strikethrough": false,
+            "backgroundColor": "transparent"
+        }
+    ],
+    "vscode-neovim.neovimInitPath": "/Users/bmarden/.config/nvim/init.vim",
+    "vscode-neovim.neovimPath": "/usr/local/bin/nvim",
+    "gitlens.mode.statusBar.alignment": "left",
+    "gitlens.statusBar.alignment": "left",
+    "gitlens.menus": {
+        "editor": {
+            "blame": false,
+            "clipboard": true,
+            "compare": true,
+            "details": false,
+            "history": false,
+            "remote": false
+        },
+        "editorGroup": false,
+        "editorTab": {
+            "clipboard": true,
+            "compare": true,
+            "history": true,
+            "remote": true
+        },
+        "explorer": {
+            "clipboard": true,
+            "compare": true,
+            "history": true,
+            "remote": true
+        },
+        "scmGroup": {
+            "compare": true,
+            "openClose": true,
+            "stash": true,
+            "stashInline": true
+        },
+        "scmItem": {
+            "clipboard": true,
+            "compare": true,
+            "history": true,
+            "remote": true,
+            "stash": true
+        }
+    },
+    "dart.runPubGetOnPubspecChanges": false,
+}

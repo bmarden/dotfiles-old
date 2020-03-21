@@ -60,7 +60,10 @@ nnoremap k gk
 let mapleader=","
 
 " Set default register in vim to use system clipboard
-set clipboard+=unnamed
+set clipboard+=unnamedplus
+
+" Set mouse scrolling
+set mouse=a
 
 " VsCode comment functions
 xmap gc  <Plug>VSCodeCommentary

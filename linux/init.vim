@@ -26,6 +26,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'phanviet/vim-monokai-pro'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 "Display
@@ -60,7 +61,7 @@ nnoremap k gk
 let mapleader=","
 
 " Set default register in vim to use system clipboard
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 
 " VsCode comment functions
 xmap gc  <Plug>VSCodeCommentary

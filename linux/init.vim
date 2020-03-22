@@ -26,6 +26,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'phanviet/vim-monokai-pro'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 "Display

@@ -3,3 +3,11 @@
 	name = Ben Marden
 [core]
 	editor = vim
+[diff]
+	tool = vimdiff3
+[difftool "vimdiff3"]
+	path = nvim
+[merge]
+	tool = vimdiff3
+[mergetool "vimdiff3"]
+	path = nvim

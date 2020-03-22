@@ -68,5 +68,11 @@
     "gitlens.views.search.location": "gitlens",
     "dart.autoImportCompletions": true,
     "vscode-neovim.neovimInitPath": "/home/bmarden/.config/nvim/init.vim",
-    "dart.runPubGetOnPubspecChanges": false
+    "dart.runPubGetOnPubspecChanges": false,
+    "[dart]": {
+        "editor.rulers": [
+            80
+        ],
+    },
+    "dart.lineLength": 100
 }

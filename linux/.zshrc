@@ -109,6 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim='nvim'
+alias vimdiff='nvim -d'
 alias cursem='cd Dropbox/School/csu_spring20/'
 # Load nvidia-settings to correct display
 alias nv='sudo nvidia-settings --load-config-only'

@@ -40,3 +40,5 @@ install pkief.material-icon-theme
 install s3gf4ult.monokai-vibrant
 install tomphilbin.gruvbox-themes
 install visualstudioexptteam.vscodeintellicode
+install usernamehw.errorlens
+install mhutchie.git-graph

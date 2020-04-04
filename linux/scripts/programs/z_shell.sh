@@ -7,7 +7,7 @@ sudo apt install -y zsh
 cd $HOME
 
 # Install oh-my-zsh
-#sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # Install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions.git /home/bmarden/.oh-my-zsh/custom/plugins/zsh-autosuggestions

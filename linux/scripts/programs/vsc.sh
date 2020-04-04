@@ -19,4 +19,6 @@ install jolaleye.horizon-theme-vscode
 install luniclynx.lex
 install ms-python.python
 install ms-vscode.cpptools
-install vscodevim.vim
+install pkief.material-icon-theme
+install asvetliakov.vscode-neovim
+install monokai.theme-monokai-pro-vscode

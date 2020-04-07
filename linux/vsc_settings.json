@@ -32,7 +32,7 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "terminal.integrated.shell.linux": "/usr/bin/zsh",
     "C_Cpp.clang_format_style": "{BasedOnStyle: Google, UseTab: Never, IndentWidth: 4, TabWidth: 4, ColumnLimit: 0}",
-    "workbench.iconTheme": "Monokai Pro (Filter Ristretto) Icons",
+    "workbench.iconTheme": "Monokai Pro Icons",
     "workbench.colorTheme": "Monokai Pro (Filter Ristretto)",
     "editor.acceptSuggestionOnEnter": "off",
     "gitlens.views.repositories.location": "gitlens",

@@ -14,8 +14,6 @@ function install {
 }
 
 # apt programs to install
-install firefox
-install brave-browser
 install curl
 install git
 install vim 

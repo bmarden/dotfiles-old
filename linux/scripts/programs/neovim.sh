@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo snap install --beta nvim
+sudo snap install --beta --classic nvim
 
 cd ../..
 
@@ -16,7 +16,7 @@ if [ ! -d "${nvimPath}" ]; then
 elif [ -h "${nvimPath}/init.vim" ]; then
 	# Existing symlink
 	echo "Removing existing symlink: ${nvimPath}"
-	rm ${nvimPath}
+	rm ${nvimPath}/init.vim
 
 elif [ -f "${nvimPath}/init.vim" ]; then
 	# Existing file

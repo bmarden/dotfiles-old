@@ -1,9 +1,9 @@
 #!/bin/bash
 
-./symlink.sh
 ./aptinstall.sh
 ./fonts.sh
 ./programs.sh
+./symlink.sh
 
 sudo apt upgrade -y
 

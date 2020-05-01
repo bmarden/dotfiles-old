@@ -17,9 +17,8 @@ let &packpath = &runtimepath
 
 " Run PlugClean to remove unused plugins
 " Run PlugInstall to install new plugins
-call plug#begin('~/.vim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
 Plug 'junegunn/vim-easy-align'
-Plug 'asvetliakov/vim-easymotion'
 Plug 'justinmk/vim-sneak' 
 Plug 'machakann/vim-highlightedyank'
 Plug 'joshdick/onedark.vim'
@@ -60,6 +59,9 @@ inoremap jj <ESC>
 nnoremap j gj
 nnoremap k gk
 let mapleader=","
+" For terminal mode
+tnoremap <Esc> <C-\><C-n>:q!<CR>
+
 
 " Set default register in vim to use system clipboard
 set clipboard+=unnamedplus

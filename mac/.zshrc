@@ -112,14 +112,19 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cursem='cd ~/Dropbox/School/csu_spring20/'
 alias vim="nvim"
+alias python="python3"
+alias python2="python"
+alias pip="pip3"
+
 #
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH="$PATH:/Users/bmarden/Documents/flutter/bin:/Users/bmarden/Library/Android/sdk/platform-tools"
+export PATH="$PATH:/Users/bmarden/Documents/flutter/bin:/Users/bmarden/Library/Android/sdk/platform-tools:~/bin"
 
+export PATH="$PATH":"$HOME/Documents/flutter/.pub-cache/bin"
 #POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_STRATEGY=truncate_folders
 

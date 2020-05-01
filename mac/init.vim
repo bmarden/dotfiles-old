@@ -20,7 +20,6 @@ nmap gc  <Plug>VSCodeCommentary
 omap gc  <Plug>VSCodeCommentary
 nmap gcc <Plug>VSCodeCommentaryLine
 
-
 " Run PlugClean to remove unused plugins
 " Run PlugInstall to install new plugins
 call plug#begin('~/.vim/plugged')
@@ -32,6 +31,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'phanviet/vim-monokai-pro'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Additional vim directives added to
@@ -56,10 +56,10 @@ endif
 set number 
 
 "let ayucolor="mirage"
-"let ayucolor="dark"
-"colorscheme ayu
+let ayucolor="dark"
+colorscheme ayu
 "colorscheme onedark
-colorscheme monokai_pro
+"colorscheme monokai_pro
 
 " Set tab to use 4 spaces
 set tabstop=4
@@ -74,7 +74,7 @@ filetype plugin indent on
 "autocmd FileType yacc set tabstop=2|set shiftwidth=2|set expandtab|set autoindent
 "autocmd FileType lex set tabstop=2|set shiftwidth=2|set expandtab|set autoindent
 syntax on
-set clipboard=unnamed,unnamedplus
+set clipboard+=unnamed,unnamedplus
 
 " Keybindings
 let mapleader=","

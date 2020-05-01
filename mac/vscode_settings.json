@@ -43,7 +43,11 @@
         "terminal.ansiBrightCyan": "#9aedfe",
         "terminal.ansiBrightWhite": "#eff0eb",
         "editorBracketMatch.background": "#acacac9f",
-        "editorBracketMatch.border": "#ffffff"
+        "editorBracketMatch.border": "#ffffff",
+        "editor.selectionBackground": "#5aa9dd7c", //Current selected text
+        "editor.selectionHighlightBackground": "#ff00005b", //Same content as selection
+        "editor.findMatchBackground": "#00cc44a8", //Current SEARCH MATCH
+        "editor.findMatchHighlightBackground": "#ff7b00a1" //Other SEARCH MATCHES
     },
     "terminal.external.osxExec": "iterm2",
     "terminal.integrated.shell.osx": "/bin/zsh",
@@ -51,29 +55,6 @@
     "terminal.integrated.fontSize": 13,
     "vsicons.dontShowNewVersionMessage": true,
     "editor.formatOnSave": true,
-    // Vim Settings
-    "vim.insertModeKeyBindings": [
-        {
-            "before": [
-                "j",
-                "j"
-            ],
-            "after": [
-                "<Esc>"
-            ]
-        }
-    ],
-    "vim.leader": ",",
-    "vim.sneak": true,
-    "vim.sneakReplacesF": true,
-    "vim.highlightedyank.enable": true,
-    "vim.overrideCopy": true,
-    "vim.useSystemClipboard": true,
-    "vim.easymotion": true,
-    "vim.easymotionMarkerBackgroundColor": "black",
-    "vim.easymotionMarkerForegroundColorOneChar": "red",
-    "vim.easymotionMarkerForegroundColorTwoChar": "red",
-    "vim.easymotionMarkerFontFamily": "SauceCodePro Nerd Font",
     // C_Cpp settings 
     "C_Cpp.clang_format_fallbackStyle": "Mozilla",
     "C_Cpp.default.cppStandard": "c++11",
@@ -95,7 +76,7 @@
     "code-runner.showExecutionMessage": false,
     "code-runner.clearPreviousOutput": true,
     "python.linting.enabled": true,
-    "workbench.iconTheme": "Monokai Pro (Filter Ristretto) Icons",
+    "workbench.iconTheme": "material-icon-theme",
     "files.associations": {
         "*.gpl": "cpp"
     },
@@ -106,7 +87,7 @@
     "gitlens.views.search.location": "gitlens",
     "editor.acceptSuggestionOnEnter": "off",
     "dart.previewFlutterUiGuides": true,
-    "workbench.colorTheme": "Monokai Pro (Filter Ristretto)",
+    "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
     "better-comments.tags": [
         {
             "tag": "!",
@@ -180,4 +161,9 @@
         }
     },
     "dart.runPubGetOnPubspecChanges": false,
+    "dart.flutterCreateOrganization": "com.",
+    "theme-by-language.themes": {
+        "*": "Monokai Pro (Filter Octagon)",
+        "markdown": "Monokai"
+    },
 }

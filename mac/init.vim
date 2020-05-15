@@ -56,10 +56,10 @@ endif
 set number 
 
 "let ayucolor="mirage"
-let ayucolor="dark"
-colorscheme ayu
+"let ayucolor="dark"
+"colorscheme ayu
 "colorscheme onedark
-"colorscheme monokai_pro
+colorscheme monokai_pro
 
 " Set tab to use 4 spaces
 set tabstop=4

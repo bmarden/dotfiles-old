@@ -122,9 +122,9 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH="$PATH:/Users/bmarden/Documents/flutter/bin:/Users/bmarden/Library/Android/sdk/platform-tools:~/bin"
+export PATH="$PATH:/Users/bmarden/development/flutter/bin:/Users/bmarden/Library/Android/sdk/platform-tools:~/bin"
 
-export PATH="$PATH":"$HOME/Documents/flutter/.pub-cache/bin"
+export PATH="$PATH":"$HOME/development/flutter/.pub-cache/bin"
 #POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_STRATEGY=truncate_folders
 

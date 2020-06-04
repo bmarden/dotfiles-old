@@ -72,11 +72,10 @@
     "C_Cpp.default.cppStandard": "c++11",
     "C_Cpp.clang_format_style": "{BasedOnStyle: Google, ColumnLimit: 0, UseTab: Never, IndentWidth: 4, TabWidth: 4}",
     "C_Cpp.default.cStandard": "c99",
-    "latex-workshop.view.pdf.viewer": "tab",
     /**
-    ** Python Settings
+    ** ---- Python Settings ----
     **/
-    "python.linting.pylintPath": "pylint",
+    // "python.linting.pylintPath": "pylint",
     "python.linting.pylintArgs": [
         "--load-plugins",
         "pylint_django"
@@ -194,5 +193,9 @@
     "markdown.styles": [
         "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
         // "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
-    ]
+    ],
+    /**
+    ** ---- Miscellaneous Settings ---- 
+    */
+    "latex-workshop.view.pdf.viewer": "tab"
 }

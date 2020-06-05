@@ -110,16 +110,21 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias cursem='cd ~/Dropbox/School/csu_spring20/'
+alias cursem='cd ~/Dropbox/School/csu_2206/'
 alias vim="nvim"
+alias python="python3"
+alias python2="python"
+alias pip="pip3"
+
 #
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH="$PATH:/Users/bmarden/Documents/flutter/bin:/Users/bmarden/Library/Android/sdk/platform-tools"
+export PATH="$PATH:/Users/bmarden/development/flutter/bin:/Users/bmarden/Library/Android/sdk/platform-tools:~/bin"
 
+export PATH="$PATH":"$HOME/development/flutter/.pub-cache/bin"
 #POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_STRATEGY=truncate_folders
 
@@ -131,4 +136,21 @@ POWERLEVEL9K_SHORTEN_STRATEGY=truncate_folders
 #POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="012"
 #POWERLEVEL9K_DIR_PATH_SEPARATOR="%F{008}/%F{cyan}"
 
+# Activate vi / vim mode:
 set -o vi
+
+# Remove delay when entering normal mode (vi)
+KEYTIMEOUT=5
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ $KEYMAP == vicmd ]] || [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ $KEYMAP == main ]] || [[ $KEYMAP == viins ]] || [[ $KEYMAP = '' ]] || [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+
+# Start with beam shape cursor on zsh startup and after every command.
+zle-line-init() { zle-keymap-select 'beam'}

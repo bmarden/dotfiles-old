@@ -78,6 +78,7 @@ POWERLEVEL9K_MODE="awesome-patched"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
+    vi-mode
 	zsh-syntax-highlighting
 	zsh-autosuggestions)
 
@@ -118,10 +119,27 @@ alias john='~/Programs/JohnTheRipper/run/john'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Vim keybindings for the terminal
-set -o vi
+# set -o vi
+#bindkey -v
 
 PATH=$PATH:~/bin:~/development/flutter/bin:/usr/lib/dart/bin:/home/bmarden/Android/Sdk/platform-tools
 
 # Change directories shown in the prompt
 POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last
+
+# Remove delay when entering normal mode (vi)
+KEYTIMEOUT=5
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ $KEYMAP == vicmd ]] || [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ $KEYMAP == main ]] || [[ $KEYMAP == viins ]] || [[ $KEYMAP = '' ]] || [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+
+# Start with beam shape cursor on zsh startup and after every command.
+zle-line-init() { zle-keymap-select 'beam'}
 

@@ -110,18 +110,17 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim='nvim'
 alias vimdiff='nvim -d'
-alias cursem='cd Dropbox/School/csu_spring20/'
+alias cursem='cd Dropbox/School/csu_2206/'
 # Load nvidia-settings to correct display
 alias nv='sudo nvidia-settings --load-config-only'
-alias john='/home/bmarden/programs/john/run/john'
-
+alias john='~/Programs/JohnTheRipper/run/john'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Vim keybindings for the terminal
 set -o vi
 
-PATH=$PATH:../../bin:~/development/flutter/bin:/usr/lib/dart/bin:/home/bmarden/Android/Sdk/platform-tools
+PATH=$PATH:~/bin:~/development/flutter/bin:/usr/lib/dart/bin:/home/bmarden/Android/Sdk/platform-tools
 
 # Change directories shown in the prompt
 POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last

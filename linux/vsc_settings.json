@@ -1,6 +1,16 @@
 {
-    "workbench.settings.useSplitJSON": true,
+    // "workbench.settings.useSplitJSON": true,
     "workbench.settings.editor": "json",
+    "workbench.colorCustomizations": {
+        "terminal.background": "#1e1f29",
+        "terminal.ansiGreen": "#00b92e",
+        "terminal.ansiBrightBlue": "#bd93f9",
+        "terminal.ansiBlue": "#d4375e",
+        "editor.selectionBackground": "#00b9b9af", //Currently SELECTED text
+        "editor.selectionHighlightBackground": "#ff00005b", //Same content as selection
+        "editor.findMatchBackground": "#00cc44a8", //Current SEARCH MATCH
+        "editor.findMatchHighlightBackground": "#ff7b00a1" //Other SEARCH MATCHES
+    },
     "editor.fontLigatures": true,
     "editor.fontFamily": "FiraCode Nerd Font, Retina",
     "editor.fontSize": 13,
@@ -19,7 +29,8 @@
         }
     },
     "editor.formatOnSave": true,
-    // "C_Cpp.clang_format_path": "/usr/bin/clang-format",
+    "debug.console.fontFamily": "FiraCode Nerd Font, Retina",
+    "debug.console.fontSize": 12,
     "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
     // Python
     "code-runner.executorMap": {
@@ -27,15 +38,9 @@
     },
     "code-runner.showExecutionMessage": false,
     "code-runner.clearPreviousOutput": true,
-    // Flutter
     // Vim 
     "vscode-neovim.neovimInitPath": "/home/bmarden/.config/nvim/init.vim",
     "vscode-neovim.neovimPath": "/snap/bin/nvim",
-    // "workbench.colorCustomizations": {
-    //     "statusBar.background": "#005f5f",
-    //     "statusBar.noFolderBackground": "#005f5f",
-    //     "statusBar.debuggingBackground": "#005f5f"
-    // },
     "C_Cpp.default.cStandard": "c99",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
     "editor.multiCursorModifier": "ctrlCmd",
@@ -48,16 +53,17 @@
     "gitlens.views.lineHistory.location": "gitlens",
     "gitlens.views.compare.location": "gitlens",
     "gitlens.views.search.location": "gitlens",
-    // Dart/flutter stuff
+    /**
+    ** ---- Dart/flutter stuff ---- 
+    **/
     "dart.previewFlutterUiGuides": true,
     "dart.autoImportCompletions": true,
     "dart.runPubGetOnPubspecChanges": false,
-    "debug.console.fontSize": 13,
-    "workbench.colorTheme": "Monokai Pro (Filter Ristretto)",
-    // "[dart]": {
-    //     "editor.rulers": [
-    //         80
-    //     ],
-    // },
-    // "dart.lineLength": 100
+    "workbench.colorTheme": "Monokai Pro",
+    "[dart]": {
+        "editor.rulers": [
+            80
+        ]
+    },
+    "dart.lineLength": 100
 }

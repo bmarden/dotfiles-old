@@ -2,7 +2,7 @@
 	email = benvmarden@gmail.com
 	name = Ben Marden
 [core]
-	editor = vim
+	editor = nvim
 [diff]
 	tool = vimdiff3
 [difftool "vimdiff3"]

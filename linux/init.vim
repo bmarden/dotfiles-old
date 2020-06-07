@@ -27,6 +27,7 @@ Plug 'justinmk/vim-syntax-extra'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
+Plug 'rakr/vim-one'
 call plug#end()
 
 "Display
@@ -43,7 +44,15 @@ endif
 "let ayucolor="dark"
 "colorscheme ayu
 "colorscheme onedark
-colorscheme monokai_pro
+"colorscheme monokai_pro
+colorscheme one
+set background=dark
+let g:airline_theme='one'
+
+" Change highlight color
+highlight Visual cterm=NONE ctermbg=76 ctermfg=16 gui=NONE guibg=#0087af guifg=#000000
+"highlight StatusLine cterm=NONE ctermbg=231 ctermfg=160 gui=NONE guibg=#ffffff guifg=#d70000
+"highlight NonText cterm=NONE ctermbg=17 gui=NONE guibg=#00005f
 
 " Set tab to use 4 spaces
 set tabstop=4

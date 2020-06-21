@@ -32,6 +32,7 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'tpope/vim-fugitive'
+Plug 'rakr/vim-one'
 call plug#end()
 
 " Additional vim directives added to
@@ -53,13 +54,22 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 if (has("termguicolors"))
     set termguicolors
 endif 
+
+" Display
+syntax on
 set number 
 
 "let ayucolor="mirage"
 "let ayucolor="dark"
 "colorscheme ayu
 "colorscheme onedark
-colorscheme monokai_pro
+"colorscheme monokai_pro
+colorscheme one 
+set background=dark
+let g:airline_theme='one'
+
+" Highlight color
+highlight Visual cterm=NONE ctermbg=76 ctermfg=16 gui=NONE guibg=#0087af guifg=#000000
 
 " Set tab to use 4 spaces
 set tabstop=4
@@ -73,7 +83,6 @@ filetype plugin indent on
 "autocmd FileType cpp set tabstop=2|set shiftwidth=2|set expandtab|set autoindent
 "autocmd FileType yacc set tabstop=2|set shiftwidth=2|set expandtab|set autoindent
 "autocmd FileType lex set tabstop=2|set shiftwidth=2|set expandtab|set autoindent
-syntax on
 set clipboard+=unnamed,unnamedplus
 
 " Keybindings

@@ -21,13 +21,20 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'junegunn/vim-easy-align'
 Plug 'justinmk/vim-sneak' 
 Plug 'machakann/vim-highlightedyank'
-Plug 'joshdick/onedark.vim'
-Plug 'ayu-theme/ayu-vim'
 Plug 'justinmk/vim-syntax-extra'
-Plug 'phanviet/vim-monokai-pro'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
+Plug 'itchyny/lightline.vim'
+" Better syntax highlighting
+Plug 'sheerun/vim-polyglot'
+" Themes
 Plug 'rakr/vim-one'
+Plug 'ayu-theme/ayu-vim'
+Plug 'joshdick/onedark.vim'
+Plug 'phanviet/vim-monokai-pro'
+Plug 'ntk148v/vim-horizon'
+Plug 'flrnd/candid.vim'
+Plug 'sainnhe/sonokai'
 call plug#end()
 
 "Display
@@ -36,18 +43,27 @@ set number
 
 " Syntax/theme stuff
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-if (has("termguicolors"))
-    set termguicolors
-endif
+"if (has("termguicolors"))
+"    set termguicolors
+"endif
+set termguicolors
+set background=dark
 
 "let ayucolor="mirage"
 "let ayucolor="dark"
 "colorscheme ayu
+
 "colorscheme onedark
 "colorscheme monokai_pro
-colorscheme one
-set background=dark
-let g:airline_theme='one'
+colorscheme candid
+
+" let g:sonokai_style = 'shusia'
+"colorscheme sonokai
+let g:lightline = {'colorscheme' : 'sonokai'}
+
+"colorscheme one
+"let g:airline_theme='one'
+
 
 " Change highlight color
 highlight Visual cterm=NONE ctermbg=76 ctermfg=16 gui=NONE guibg=#0087af guifg=#000000

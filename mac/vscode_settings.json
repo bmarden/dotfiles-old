@@ -197,5 +197,6 @@
     /**
     ** ---- Miscellaneous Settings ---- 
     */
-    "latex-workshop.view.pdf.viewer": "tab"
+    "latex-workshop.view.pdf.viewer": "tab",
+    "explorer.confirmDragAndDrop": false
 }

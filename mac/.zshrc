@@ -110,7 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias cursem='cd ~/Dropbox/School/csu_2206/'
+alias cursem="cd $HOME/Dropbox/School/csu_2206/"
 alias vim="nvim"
 alias python="python3"
 alias python2="python"
@@ -154,3 +154,5 @@ zle -N zle-keymap-select
 
 # Start with beam shape cursor on zsh startup and after every command.
 zle-line-init() { zle-keymap-select 'beam'}
+
+

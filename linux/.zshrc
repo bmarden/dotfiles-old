@@ -111,7 +111,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim='nvim'
 alias vimdiff='nvim -d'
-alias cursem='cd Dropbox/School/csu_2206/'
+alias cursem="cd $HOME/Dropbox/School/csu_2206/"
 # Load nvidia-settings to correct display
 alias nv='sudo nvidia-settings --load-config-only'
 alias john='~/Programs/JohnTheRipper/run/john'

@@ -36,4 +36,5 @@ linkDotfile .gitconfig ${HOME}/.gitconfig
 linkDotfile init.vim ${HOME}/.config/nvim/init.vim
 linkDotfile .p10k.zsh ${HOME}/.p10k.zsh
 linkDotfile vsc_settings.json ${HOME}/.config/Code/User/settings.json
+linkDotfile .tmux.conf ${HOME}/.tmux.conf
 

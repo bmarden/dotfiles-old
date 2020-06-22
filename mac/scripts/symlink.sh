@@ -29,9 +29,11 @@ function linkDotfile {
 	ln -s "${dotfilesDir}/${1}" "${dest}"
 }
 
-linkDotfile .zshrc ${HOME}/.zshrc 
-linkDotfile .gitconfig ${HOME}/.gitconfig
-linkDotfile init.vim ${HOME}/.config/nvim/init.vim
-linkDotfile .p10k.zsh ${HOME}/.p10k.zsh
+linkDotfile .zshrc "${HOME}/.zshrc"
+linkDotfile .gitconfig "${HOME}/.gitconfig"
+linkDotfile init.vim "${HOME}/.config/nvim/init.vim"
+linkDotfile .p10k.zsh "${HOME}/.p10k.zsh"
 linkDotfile vscode_settings.json "${HOME}/Library/Application Support/Code/User/settings.json" 
+linkDotfile .inputrc "${HOME}/.inputrc"
+linkDotfile .tmux.conf "${HOME}/.tmux.conf
 

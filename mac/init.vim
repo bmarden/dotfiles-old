@@ -33,6 +33,9 @@ Plug 'justinmk/vim-syntax-extra'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'tpope/vim-fugitive'
 Plug 'rakr/vim-one'
+Plug 'itchyny/lightline.vim'
+Plug 'sainnhe/sonokai'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " Additional vim directives added to
@@ -64,13 +67,12 @@ set number
 "colorscheme ayu
 "colorscheme onedark
 "colorscheme monokai_pro
-colorscheme one 
+let g:sonokai_style = 'andromeda'
+colorscheme sonokai 
 set background=dark
-let g:airline_theme='one'
+let g:lightline = {'colorscheme' : 'sonokai'}
 
-" Highlight color
-highlight Visual cterm=NONE ctermbg=76 ctermfg=16 gui=NONE guibg=#0087af guifg=#000000
-
+hi Visual term=reverse cterm=reverse guibg=Grey35
 " Set tab to use 4 spaces
 set tabstop=4
 set softtabstop=4

@@ -8,7 +8,6 @@
     "editor.tabSize": 4,
     "editor.formatOnSave": true,
     "editor.acceptSuggestionOnEnter": "off",
-    "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
     "editor.tokenColorCustomizations": {
         "[Horizon]": {
             "comments": "#97979b33"
@@ -58,7 +57,7 @@
     },
     "terminal.external.osxExec": "iterm2",
     "terminal.integrated.shell.osx": "/bin/zsh",
-    "terminal.integrated.fontFamily": "MeslolGL Nerd Font Mono",
+    "terminal.integrated.fontFamily": "Hack Nerd Font",
     "terminal.integrated.fontSize": 13,
     "vsicons.dontShowNewVersionMessage": true,
     // "theme-by-language.themes": {
@@ -76,13 +75,27 @@
     ** ---- Python Settings ----
     **/
     // "python.linting.pylintPath": "pylint",
-    "python.linting.pylintArgs": [
-        "--load-plugins",
-        "pylint_django"
+    // "python.linting.pylintArgs": [
+    //     "--load-plugins",
+    //     "pylint_django",
+    //     "--disable",
+    //     "C0114",
+    //     "--disable",
+    //     "C0116",
+    //     "--disable",
+    //     "C0115"
+    // ],
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--line-length",
+        "120"
     ],
-    "python.linting.pylintEnabled": true,
-    "python.jediEnabled": false,
-    "python.formatting.provider": "autopep8",
+    "python.languageServer": "Microsoft",
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "120"
+    ],
     "code-runner.executorMap": {
         "python": "$pythonPath -u $fullFileName"
     },
@@ -198,5 +211,7 @@
     ** ---- Miscellaneous Settings ---- 
     */
     "latex-workshop.view.pdf.viewer": "tab",
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "editor.semanticHighlighting.enabled": true,
+    "workbench.colorTheme": "One Dark Pro"
 }

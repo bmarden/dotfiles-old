@@ -25,6 +25,7 @@ Plug 'justinmk/vim-syntax-extra'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
+Plug 'preservim/nerdtree'   
 " Better syntax highlighting
 Plug 'sheerun/vim-polyglot'
 " Themes
@@ -37,7 +38,9 @@ Plug 'flrnd/candid.vim'
 Plug 'sainnhe/sonokai'
 call plug#end()
 
-"Display
+filetype plugin indent on
+
+" Display
 syntax on
 set number
 
@@ -55,10 +58,10 @@ set background=dark
 
 "colorscheme onedark
 "colorscheme monokai_pro
-colorscheme candid
+"colorscheme candid
 
-" let g:sonokai_style = 'shusia'
-"colorscheme sonokai
+let g:sonokai_style = 'shusia'
+colorscheme sonokai
 let g:lightline = {'colorscheme' : 'sonokai'}
 
 "colorscheme one
@@ -66,15 +69,13 @@ let g:lightline = {'colorscheme' : 'sonokai'}
 
 
 " Change highlight color
-highlight Visual cterm=NONE ctermbg=76 ctermfg=16 gui=NONE guibg=#0087af guifg=#000000
-"highlight StatusLine cterm=NONE ctermbg=231 ctermfg=160 gui=NONE guibg=#ffffff guifg=#d70000
-"highlight NonText cterm=NONE ctermbg=17 gui=NONE guibg=#00005f
+highlight Visual term=reverse cterm=reverse guibg=Grey35
 
 " Set tab to use 4 spaces
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set expandtab
+set expandtab       " change tabs to spaces 
 
 " Highlight duration
 let g:highlightedyank_highlight_duration = 250
@@ -87,9 +88,14 @@ let mapleader=","
 " For terminal mode
 tnoremap <Esc> <C-\><C-n>:q!<CR>
 
+" Navigate easier in NERD Tree
+map  <C-l> :tabn<CR>
+map  <C-h> :tabp<CR>
+map  <C-n> :tabnew<CR>
 
+let g:NERDTreeWinSize=25
 " Set default register in vim to use system clipboard
-set clipboard+=unnamedplus
+" set clipboard+=unnamedplus
 
 " Set mouse scrolling
 set mouse=a
@@ -99,4 +105,8 @@ xmap gc  <Plug>VSCodeCommentary
 nmap gc  <Plug>VSCodeCommentary
 omap gc  <Plug>VSCodeCommentary
 nmap gcc <Plug>VSCodeCommentaryLine
+
+if has('clipboard')
+    set clipboard^=unnamed
+endif
 

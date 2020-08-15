@@ -1,53 +1,70 @@
 {
-    // "workbench.settings.useSplitJSON": true,
+    /**
+    ** ---- General Editor Settings ----
+    **/
+    // Themes/Fonts
+    "workbench.iconTheme": "eq-material-theme-icons-ocean",
+    "workbench.colorTheme": "Monokai Pro",
+    "editor.fontFamily": "Hack Nerd Font",
+    "editor.fontSize": 13,
+    "editor.fontLigatures": true,
+    "editor.minimap.maxColumn": 120,
+    "editor.wordWrap": "off",
+    "editor.formatOnSave": true,
     "workbench.settings.editor": "json",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.acceptSuggestionOnEnter": "off",
+    /**
+    ** ---- Terminal/Debug Console Settings ----
+    **/
+    "terminal.integrated.fontFamily": "Hack Nerd Font",
+    "terminal.integrated.rendererType": "canvas",
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.shell.linux": "/usr/bin/zsh",
+    "debug.console.fontFamily": "Hack Nerd Font",
+    "debug.console.fontSize": 12,
+    /**
+    ** ---- Terminal/Editor Colors ----
+    **/
     "workbench.colorCustomizations": {
         "terminal.background": "#1e1f29",
         "terminal.ansiGreen": "#00b92e",
         "terminal.ansiBrightBlue": "#bd93f9",
-        "terminal.ansiBlue": "#d4375e",
+        "terminal.ansiBlue": "#1b6db9",
         "editor.selectionBackground": "#00b9b9af", //Currently SELECTED text
         "editor.selectionHighlightBackground": "#ff00005b", //Same content as selection
         "editor.findMatchBackground": "#00cc44a8", //Current SEARCH MATCH
         "editor.findMatchHighlightBackground": "#ff7b00a1" //Other SEARCH MATCHES
     },
-    "editor.fontLigatures": true,
-    "editor.fontFamily": "FiraCode Nerd Font, Retina",
-    "editor.fontSize": 13,
-    "terminal.integrated.fontFamily": "DroidSansMono Nerd Font, Book",
-    "terminal.integrated.rendererType": "canvas",
-    "terminal.integrated.fontSize": 13,
-    "editor.minimap.maxColumn": 120,
-    "editor.wordWrap": "off",
-    "[markdown]": {
-        "editor.wordWrap": "on",
-        "editor.wordWrapColumn": 80,
-        "editor.quickSuggestions": {
-            "other": true,
-            "comments": false,
-            "strings": false
-        }
-    },
-    "editor.formatOnSave": true,
-    "debug.console.fontFamily": "FiraCode Nerd Font, Retina",
-    "debug.console.fontSize": 12,
-    "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
-    // Python
-    "code-runner.executorMap": {
-        "python": "$pythonPath -u $fullFileName",
-    },
-    "code-runner.showExecutionMessage": false,
-    "code-runner.clearPreviousOutput": true,
-    // Vim 
+    /**
+    ** ---- Python Settings ----
+    **/
+    "python.languageServer": "Microsoft",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.formatting.provider": "autopep8",
+    "python.formatting.autopep8Args": [
+        "--max-line-length",
+        "100"
+    ],
+    /**
+    ** ---- C/C++ Settings ----
+    **/
+    "C_Cpp.clang_format_fallbackStyle": "Mozilla",
+    "C_Cpp.default.cStandard": "c99",
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.clang_format_style": "{BasedOnStyle: Google, UseTab: Never, IndentWidth: 4, TabWidth: 4, ColumnLimit: 0}",
+    /**
+    ** ---- Vim/Neovim Settings ---- 
+    **/
     "vscode-neovim.neovimInitPath": "/home/bmarden/.config/nvim/init.vim",
     "vscode-neovim.neovimPath": "/snap/bin/nvim",
-    "C_Cpp.default.cStandard": "c99",
-    "C_Cpp.default.intelliSenseMode": "gcc-x64",
     "editor.multiCursorModifier": "ctrlCmd",
-    "terminal.integrated.shell.linux": "/usr/bin/zsh",
-    "C_Cpp.clang_format_style": "{BasedOnStyle: Google, UseTab: Never, IndentWidth: 4, TabWidth: 4, ColumnLimit: 0}",
-    "workbench.iconTheme": "eq-material-theme-icons-ocean",
-    "editor.acceptSuggestionOnEnter": "off",
+    /**
+    ** -- Gitlens/Git Settings ----
+    **/
     "gitlens.views.repositories.location": "gitlens",
     "gitlens.views.fileHistory.location": "gitlens",
     "gitlens.views.lineHistory.location": "gitlens",
@@ -59,11 +76,22 @@
     "dart.previewFlutterUiGuides": true,
     "dart.autoImportCompletions": true,
     "dart.runPubGetOnPubspecChanges": false,
-    "workbench.colorTheme": "Monokai Pro",
     "[dart]": {
         "editor.rulers": [
             80
         ]
     },
-    "dart.lineLength": 100
+    "dart.lineLength": 100,
+    /**
+    ** ---- Markdown Settings ----
+    **/
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.wordWrapColumn": 80,
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": false
+        }
+    },
 }

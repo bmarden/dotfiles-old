@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block, everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -22,10 +15,10 @@ POWERLEVEL9K_MODE="awesome-patched"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    zsh-autosuggestions
 	git
-    vi-mode
 	zsh-syntax-highlighting
-	zsh-autosuggestions)
+	)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -54,13 +47,13 @@ alias pip='pip3'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Vim keybindings for the terminal
-# set -o vi
+set -o vi
 #bindkey -v
 
 PATH=$PATH:~/bin:~/development/flutter/bin:/usr/lib/dart/bin:/home/bmarden/Android/Sdk/platform-tools
 
 # Change directories shown in the prompt
-POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last
+# POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last
 
 # Remove delay when entering normal mode (vi)
 KEYTIMEOUT=5

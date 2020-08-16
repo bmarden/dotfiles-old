@@ -4,7 +4,7 @@
     **/
     // Themes/Fonts
     "workbench.iconTheme": "eq-material-theme-icons-ocean",
-    "workbench.colorTheme": "Monokai Pro",
+    "workbench.colorTheme": "Sonokai Andromeda",
     "editor.fontFamily": "Hack Nerd Font",
     "editor.fontSize": 13,
     "editor.fontLigatures": true,
@@ -32,7 +32,7 @@
         "terminal.ansiGreen": "#00b92e",
         "terminal.ansiBrightBlue": "#bd93f9",
         "terminal.ansiBlue": "#1b6db9",
-        "editor.selectionBackground": "#00b9b9af", //Currently SELECTED text
+        "editor.selectionBackground": "#585858", //Currently SELECTED text
         "editor.selectionHighlightBackground": "#ff00005b", //Same content as selection
         "editor.findMatchBackground": "#00cc44a8", //Current SEARCH MATCH
         "editor.findMatchHighlightBackground": "#ff7b00a1" //Other SEARCH MATCHES
@@ -42,12 +42,22 @@
     **/
     "python.languageServer": "Microsoft",
     "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
-    "python.formatting.provider": "autopep8",
-    "python.formatting.autopep8Args": [
-        "--max-line-length",
-        "100"
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--ignore=E203",
+        "--ignore=E266",
+        "--ignore=E501",
+        "--ignore=W503",
+        "--max-line-length=100",
+        "--select = B,C,E,F,W,T4,B9",
+        "--max-complexityj = 18"
     ],
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "120"
+    ],
+    // "python.linting.pylintUseMinimalCheckers": true,
     /**
     ** ---- C/C++ Settings ----
     **/
@@ -94,4 +104,5 @@
             "strings": false
         }
     },
+    "explorer.confirmDelete": false,
 }

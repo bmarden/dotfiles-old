@@ -14,11 +14,7 @@ POWERLEVEL9K_MODE="awesome-patched"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-    zsh-autosuggestions
-	git
-	zsh-syntax-highlighting
-	)
+plugins=(zsh-nvm zsh-autosuggestions git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -37,7 +33,7 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias vim='nvim'
 alias vimdiff='nvim -d'
-alias cursem="cd $HOME/Dropbox/School/su2020_csu/csci344/"
+alias cursem="cd $HOME/Dropbox/School/fa2020_csu/"
 alias john='~/Programs/JohnTheRipper/run/john'
 alias python='python3'
 alias ivim="vim $HOME/.config/nvim/init.vim"

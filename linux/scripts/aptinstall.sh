@@ -18,9 +18,8 @@ install curl
 install git
 install vim 
 install xclip
-install bison
-install flex 
 install valgrind
+install texlive-full
 
 # Useless things
 install figlet

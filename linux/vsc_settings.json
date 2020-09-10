@@ -4,7 +4,7 @@
    **/
   "workbench.settings.editor": "json",
   // "workbench.settings.useSplitJSON": true,
-  "editor.fontSize": 13,
+  "editor.fontSize": 12,
   "editor.tabSize": 4,
   "editor.formatOnSave": true,
   "editor.acceptSuggestionOnEnter": "off",
@@ -73,10 +73,7 @@
   ],
   "python.languageServer": "Microsoft",
   "python.formatting.provider": "black",
-  "python.formatting.blackArgs": [
-    "--line-length",
-    "120"
-  ],
+  "python.formatting.blackArgs": ["--line-length", "120"],
   "C_Cpp.clang_format_fallbackStyle": "Mozilla",
   "C_Cpp.default.cStandard": "c99",
   "C_Cpp.default.cppStandard": "c++17",
@@ -141,8 +138,12 @@
       "backgroundColor": "transparent"
     }
   ],
+  /**
+   ** ---- Vim/Neovim Settings ----
+   **/
   "vscode-neovim.neovimInitPath": "/home/bmarden/.config/nvim/init.vim",
   "vscode-neovim.neovimPath": "/usr/local/bin/nvim",
+  "vim.useSystemClipboard": true,
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "j"],
@@ -167,6 +168,7 @@
   "dart.runPubGetOnPubspecChanges": false,
   "dart.flutterCreateOrganization": "com.",
   "dart.previewFlutterUiGuides": true,
+  "dart.flutterSdkPath": "/home/bmarden/development/flutter",
   "[dart]": {
     "editor.formatOnType": true,
     "editor.selectionHighlight": false,
@@ -189,16 +191,48 @@
   "markdown.extension.math.enabled": false,
   "markdown-preview-enhanced.previewTheme": "atom-material.css",
   /**
+   ** ---- LaTeX Settings ----
+   **/
+  "latex-workshop.latex.autoBuild.run": "onFileChange",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "--shell-escape",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "--shell-escape",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": ["%DOCFILE%"]
+    }
+  ],
+  /**
    ** ---- Miscellaneous Settings ----
    */
   "latex-workshop.view.pdf.viewer": "tab",
   "explorer.confirmDragAndDrop": false,
   "editor.semanticHighlighting.enabled": true,
   "workbench.colorTheme": "One Dark Pro",
-  "settingsSync.ignoredSettings": [
-    "vscode-neovim.neovimInitPath"
-  ],
-  "dart.flutterSdkPath": "/home/bmarden/development/flutter",
+  "settingsSync.ignoredSettings": ["vscode-neovim.neovimInitPath"],
   /**
    ** ---- Gitlens Settings ----
    **/
@@ -250,5 +284,8 @@
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "cSpell.userWords": [
+    "youtube"
+  ]
 }

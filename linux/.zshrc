@@ -46,7 +46,7 @@ alias pip='pip3'
 set -o vi
 #bindkey -v
 
-PATH=$PATH:~/bin:~/development/flutter/bin:/usr/lib/dart/bin:/home/bmarden/Android/Sdk/platform-tools
+PATH=$PATH:~/bin:~/development/flutter/bin:/usr/lib/dart/bin:/home/bmarden/Android/Sdk/platform-tools:/usr/local/texlive/2020/bin/x86_64-linux
 
 # Change directories shown in the prompt
 # POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last

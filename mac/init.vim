@@ -1,43 +1,13 @@
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath = &runtimepath
-    "source ~/.vimrc
+"set runtimepath^=~/.vim runtimepath+=~/.vim/after
+"let &packpath = &runtimepath
 
-" VScode stuff
+source $HOME/.config/nvim/vim-plugins/plugins.vim
 if exists('g:vscode')
-	function! s:showCommands()
-		normal! gv
-		let startLine = line("v")
-		let endLine = line(".")
-		call VSCodeNotifyRange("workbench.action.showCommands", startLine, endLine, 1)
-	endfunction
-
-	xnoremap <silent> <C-P> :<C-u>call <SID>showCommands()<CR> 
+    source $HOME/.config/nvim/vscode_settings.vim
+    source $HOME/.config/nvim/vim-plugins/plug-config/easymotion.vim
+		nmap <Tab> :Tabnext<CR>
+		nmap <S-Tab> :Tabprev<CR>
 endif
-
-" VsCode comment functions
-xmap gc  <Plug>VSCodeCommentary
-nmap gc  <Plug>VSCodeCommentary
-omap gc  <Plug>VSCodeCommentary
-nmap gcc <Plug>VSCodeCommentaryLine
-
-" Run PlugClean to remove unused plugins
-" Run PlugInstall to install new plugins
-call plug#begin('~/.vim/plugged')
-Plug 'junegunn/vim-easy-align'
-Plug 'asvetliakov/vim-easymotion'
-Plug 'justinmk/vim-sneak' 
-Plug 'machakann/vim-highlightedyank'
-Plug 'joshdick/onedark.vim'
-Plug 'ayu-theme/ayu-vim'
-Plug 'justinmk/vim-syntax-extra'
-Plug 'phanviet/vim-monokai-pro'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-fugitive'
-Plug 'rakr/vim-one'
-Plug 'itchyny/lightline.vim'
-Plug 'sainnhe/sonokai'
-Plug 'scrooloose/nerdtree'
-call plug#end()
 
 " Additional vim directives added to
 " 1. discourage use of arrow keys
@@ -56,7 +26,7 @@ noremap   <Right>  <NOP>
 " Syntax/theme stuff
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 if (has("termguicolors"))
-    set termguicolors
+		set termguicolors
 endif 
 
 " Display
@@ -75,10 +45,12 @@ let g:lightline = {'colorscheme' : 'sonokai'}
 
 hi Visual term=reverse cterm=reverse guibg=Grey35
 " Set tab to use 4 spaces
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
+set smartindent
+set autoindent
 
 filetype plugin indent on
 "autocmd FileType make set noexpandtab|set autoindent

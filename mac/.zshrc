@@ -16,8 +16,8 @@ export ZSH="/Users/bmarden/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="amuse"
-ZSH_THEME="powerlevel10k/powerlevel10k"
-POWERLEVEL9K_MODE="aweseome-patched"
+ZSH_THEME="intheloop"
+#POWERLEVEL9K_MODE="aweseome-patched"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -42,11 +42,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh" 
-alias cursem="cd $HOME/Dropbox/School/su2020_csu/"
+alias cursem="cd $HOME/Dropbox/School/fa2020_csu/"
 alias vim="nvim"
-alias python="python3"
-alias python2="python"
-alias pip="pip3"
+#alias python="python3"
+#alias python2="python"
+#alias pip="pip3"
 alias ivim="vim ~/.config/nvim/init.vim"
 #
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -87,4 +87,12 @@ zle -N zle-keymap-select
 # Start with beam shape cursor on zsh startup and after every command.
 zle-line-init() { zle-keymap-select 'beam'}
 
+PATH="/Users/bmarden/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/bmarden/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/bmarden/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/bmarden/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/bmarden/perl5"; export PERL_MM_OPT;
 
+export RSTUDIO_PANDOC="/Applications/RStudio.app/Contents/MacOS/pandoc"
+
+eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"

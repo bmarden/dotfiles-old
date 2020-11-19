@@ -1,97 +1,291 @@
 {
-    /**
-    ** ---- General Editor Settings ----
-    **/
-    // Themes/Fonts
-    "workbench.iconTheme": "eq-material-theme-icons-ocean",
-    "workbench.colorTheme": "Monokai Pro",
-    "editor.fontFamily": "Hack Nerd Font",
-    "editor.fontSize": 13,
-    "editor.fontLigatures": true,
-    "editor.minimap.maxColumn": 120,
-    "editor.wordWrap": "off",
-    "editor.formatOnSave": true,
-    "workbench.settings.editor": "json",
+  /**
+   ** --- General Editor Settings ----
+   **/
+  "workbench.settings.editor": "json",
+  // "workbench.settings.useSplitJSON": true,
+  "editor.fontSize": 12,
+  "editor.tabSize": 4,
+  "editor.formatOnSave": true,
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.tokenColorCustomizations": {
+    "[Horizon]": {
+      "comments": "#97979b33"
+    }
+  },
+  "editor.fontFamily": "Cascadia Code PL",
+  // "editor.fontFamily": "FiraCode Nerd Font",
+  // "editor.fontFamily": "Hack Nerd Font",
+  "editor.fontWeight": "400",
+  "editor.fontLigatures": true,
+  "window.zoomLevel": 0,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "explorer.confirmDelete": false,
+  /**
+   ** ---- Terminal Settings ----
+   **/
+  "workbench.colorCustomizations": {
+    // The background is optional
+    "terminal.background": "#323336",
+    "terminalCursor.background": "#282a36",
+    "terminalCursor.foreground": "#97979b",
+    "terminal.selectionBackground": "#97979b33",
+    "terminal.foreground": "#eff0eb",
+    "terminal.ansiBlack": "#282a36",
+    "terminal.ansiRed": "#ff5c57",
+    "terminal.ansiGreen": "#5af78e",
+    "terminal.ansiYellow": "#ff950a",
+    // "terminal.ansiBlue": "#57c7ff",
+    "terminal.ansiBlue": "#0084ff",
+    "terminal.ansiMagenta": "#ff6ac1",
+    "terminal.ansiCyan": "#9aedfe",
+    "terminal.ansiWhite": "#f1f1f0",
+    "terminal.ansiBrightBlack": "#686868",
+    "terminal.ansiBrightRed": "#ff5c57",
+    "terminal.ansiBrightGreen": "#5af78e",
+    "terminal.ansiBrightYellow": "#f3f99d",
+    "terminal.ansiBrightBlue": "#57c7ff",
+    "terminal.ansiBrightMagenta": "#ff6ac1",
+    "terminal.ansiBrightCyan": "#9aedfe",
+    "terminal.ansiBrightWhite": "#eff0eb",
+    // "editorBracketMatch.background": "#acacac9f",
+    // "editorBracketMatch.border": "#ffffff",
+    "editor.selectionBackground": "#5aa9dd7c", //Current selected text
+    "editor.selectionHighlightBackground": "#ff00005b", //Same content as selection
+    "editor.findMatchBackground": "#00cc44a8", //Current SEARCH MATCH
+    "editor.findMatchHighlightBackground": "#ad5400a1" //Other SEARCH MATCHES
+  },
+  "terminal.external.osxExec": "iterm2",
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.integrated.fontFamily": "Hack Nerd Font",
+  "terminal.integrated.fontSize": 13,
+  "vsicons.dontShowNewVersionMessage": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": [
+    "--ignore=E203",
+    "--ignore=E266",
+    "--ignore=E501",
+    "--ignore=W503",
+    "--max-line-length=100",
+    "--select = B,C,E,F,W,T4,B9",
+    "--max-complexityj = 18"
+  ],
+  "python.languageServer": "Microsoft",
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--line-length", "120"],
+  "C_Cpp.clang_format_fallbackStyle": "Mozilla",
+  "C_Cpp.default.cStandard": "c99",
+  "C_Cpp.default.cppStandard": "c++17",
+  "C_Cpp.default.intelliSenseMode": "gcc-x64",
+  "C_Cpp.clang_format_style": "{BasedOnStyle: Google, UseTab: Never, IndentWidth: 4, TabWidth: 4, ColumnLimit: 0}",
+  "code-runner.executorMap": {
+    "python": "$pythonPath -u $fullFileName"
+  },
+  "code-runner.showExecutionMessage": false,
+  "code-runner.clearPreviousOutput": true,
+  "python.linting.enabled": true,
+  "workbench.iconTheme": "vscode-icons",
+  "files.associations": {
+    "*.gpl": "cpp",
+    "*.js": "javascriptreact"
+  },
+  /**
+   ** ---- Javascript Settings ----
+   **/
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "prettier.singleQuote": true,
+  /**
+   ** ---- Better Comments tag colors
+   **/
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "//",
+      "color": "#81818181",
+      "strikethrough": true,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    }
+  ],
+  /**
+   ** ---- Vim/Neovim Settings ----
+   **/
+  "vscode-neovim.neovimInitPath": "/home/bmarden/.config/nvim/init.vim",
+  "vscode-neovim.neovimPath": "/usr/local/bin/nvim",
+  "vim.useSystemClipboard": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-n>"],
+      "after": ["nohl"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  /**
+   ** ---- Dart / Flutter Settings ----
+   **/
+  "dart.runPubGetOnPubspecChanges": false,
+  "dart.flutterCreateOrganization": "com.",
+  "dart.previewFlutterUiGuides": true,
+  "dart.flutterSdkPath": "/home/bmarden/development/flutter",
+  "[dart]": {
+    "editor.formatOnType": true,
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "editor.acceptSuggestionOnEnter": "off",
-    /**
-    ** ---- Terminal/Debug Console Settings ----
-    **/
-    "terminal.integrated.fontFamily": "Hack Nerd Font",
-    "terminal.integrated.rendererType": "canvas",
-    "terminal.integrated.fontSize": 13,
-    "terminal.integrated.shell.linux": "/usr/bin/zsh",
-    "debug.console.fontFamily": "Hack Nerd Font",
-    "debug.console.fontSize": 12,
-    /**
-    ** ---- Terminal/Editor Colors ----
-    **/
-    "workbench.colorCustomizations": {
-        "terminal.background": "#1e1f29",
-        "terminal.ansiGreen": "#00b92e",
-        "terminal.ansiBrightBlue": "#bd93f9",
-        "terminal.ansiBlue": "#1b6db9",
-        "editor.selectionBackground": "#00b9b9af", //Currently SELECTED text
-        "editor.selectionHighlightBackground": "#ff00005b", //Same content as selection
-        "editor.findMatchBackground": "#00cc44a8", //Current SEARCH MATCH
-        "editor.findMatchHighlightBackground": "#ff7b00a1" //Other SEARCH MATCHES
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  /**
+   ** ---- Markdown Settings ----
+   */
+  "markdownlint.config": {
+    "MD013": false,
+    "MD033": false
+  },
+  "markdown.styles": [
+    "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    // "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
+  ],
+  "markdown.extension.math.enabled": false,
+  "markdown-preview-enhanced.previewTheme": "atom-material.css",
+  /**
+   ** ---- LaTeX Settings ----
+   **/
+  "latex-workshop.latex.autoBuild.run": "onFileChange",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "--shell-escape",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ]
     },
-    /**
-    ** ---- Python Settings ----
-    **/
-    "python.languageServer": "Microsoft",
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
-    "python.formatting.provider": "autopep8",
-    "python.formatting.autopep8Args": [
-        "--max-line-length",
-        "100"
-    ],
-    /**
-    ** ---- C/C++ Settings ----
-    **/
-    "C_Cpp.clang_format_fallbackStyle": "Mozilla",
-    "C_Cpp.default.cStandard": "c99",
-    "C_Cpp.default.cppStandard": "c++17",
-    "C_Cpp.default.intelliSenseMode": "gcc-x64",
-    "C_Cpp.clang_format_style": "{BasedOnStyle: Google, UseTab: Never, IndentWidth: 4, TabWidth: 4, ColumnLimit: 0}",
-    /**
-    ** ---- Vim/Neovim Settings ---- 
-    **/
-    "vscode-neovim.neovimInitPath": "/home/bmarden/.config/nvim/init.vim",
-    "vscode-neovim.neovimPath": "/snap/bin/nvim",
-    "editor.multiCursorModifier": "ctrlCmd",
-    /**
-    ** -- Gitlens/Git Settings ----
-    **/
-    "gitlens.views.repositories.location": "gitlens",
-    "gitlens.views.fileHistory.location": "gitlens",
-    "gitlens.views.lineHistory.location": "gitlens",
-    "gitlens.views.compare.location": "gitlens",
-    "gitlens.views.search.location": "gitlens",
-    /**
-    ** ---- Dart/flutter stuff ---- 
-    **/
-    "dart.previewFlutterUiGuides": true,
-    "dart.autoImportCompletions": true,
-    "dart.runPubGetOnPubspecChanges": false,
-    "[dart]": {
-        "editor.rulers": [
-            80
-        ]
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "--shell-escape",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
     },
-    "dart.lineLength": 100,
-    /**
-    ** ---- Markdown Settings ----
-    **/
-    "[markdown]": {
-        "editor.wordWrap": "on",
-        "editor.wordWrapColumn": 80,
-        "editor.quickSuggestions": {
-            "other": true,
-            "comments": false,
-            "strings": false
-        }
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": ["%DOCFILE%"]
+    }
+  ],
+  /**
+   ** ---- Miscellaneous Settings ----
+   */
+  "latex-workshop.view.pdf.viewer": "tab",
+  "explorer.confirmDragAndDrop": false,
+  "editor.semanticHighlighting.enabled": true,
+  "workbench.colorTheme": "One Dark Pro",
+  "settingsSync.ignoredSettings": ["vscode-neovim.neovimInitPath"],
+  /**
+   ** ---- Gitlens Settings ----
+   **/
+  "gitlens.views.repositories.location": "gitlens",
+  "gitlens.views.fileHistory.location": "gitlens",
+  "gitlens.views.lineHistory.location": "gitlens",
+  "gitlens.views.compare.location": "gitlens",
+  "gitlens.views.search.location": "gitlens",
+  "gitlens.mode.statusBar.alignment": "left",
+  "gitlens.statusBar.alignment": "left",
+  "gitlens.menus": {
+    "editor": {
+      "blame": false,
+      "clipboard": true,
+      "compare": true,
+      "details": false,
+      "history": false,
+      "remote": false
     },
+    "editorGroup": false,
+    "editorTab": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true
+    },
+    "explorer": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true
+    },
+    "scmGroup": {
+      "compare": true,
+      "openClose": true,
+      "stash": true,
+      "stashInline": true
+    },
+    "scmItem": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true,
+      "stash": true
+    }
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.userWords": [
+    "youtube"
+  ]
 }

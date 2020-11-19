@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block, everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -21,11 +14,7 @@ POWERLEVEL9K_MODE="awesome-patched"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-	git
-    vi-mode
-	zsh-syntax-highlighting
-	zsh-autosuggestions)
+plugins=(zsh-nvm zsh-autosuggestions git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -44,7 +33,7 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias vim='nvim'
 alias vimdiff='nvim -d'
-alias cursem="cd $HOME/Dropbox/School/su2020_csu/csci344/"
+alias cursem="cd $HOME/Dropbox/School/fa2020_csu/"
 alias john='~/Programs/JohnTheRipper/run/john'
 alias python='python3'
 alias ivim="vim $HOME/.config/nvim/init.vim"
@@ -54,13 +43,13 @@ alias pip='pip3'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Vim keybindings for the terminal
-# set -o vi
+set -o vi
 #bindkey -v
 
-PATH=$PATH:~/bin:~/development/flutter/bin:/usr/lib/dart/bin:/home/bmarden/Android/Sdk/platform-tools
+PATH=$PATH:~/bin:~/development/flutter/bin:/usr/lib/dart/bin:/home/bmarden/Android/Sdk/platform-tools:/usr/local/texlive/2020/bin/x86_64-linux
 
 # Change directories shown in the prompt
-POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last
+# POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last
 
 # Remove delay when entering normal mode (vi)
 KEYTIMEOUT=5

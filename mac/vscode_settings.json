@@ -1,6 +1,15 @@
 {
   /**
-   ** --- General Editor Settings ----
+  ** ---- Settings Sync ----
+  **/
+  "settingsSync.ignoredExtensions": [
+    "ms-vscode-remote.remote-wsl",
+    "vscode-neovim.useWSL",
+    "vscode-neovim.neovimInitVimPaths.linux",
+    "vscode-neovim.neovimExecutablePaths.linux"
+  ],
+  /**
+   ** ---- General Editor Settings ----
    **/
   "workbench.tree.indent": 10,
   "workbench.settings.editor": "json",
@@ -9,22 +18,22 @@
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   // "editor.acceptSuggestionOnEnter": "off",
-  // "editor.fontFamily": "Cascadia Code PL",
-  "editor.fontFamily": "'Cascadia Code', Consolas, 'Courier New', monospace",
+  // "editor.fontFamily": "'Cascadia Code', Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "'Fira Code'",
   // "editor.fontFamily": "Hasklig",
   // "editor.fontFamily": "Hack Nerd Font",
-  "editor.fontWeight": "350",
+  // "editor.fontWeight": "350",
+  "editor.renderLineHighlight": "all",
   "editor.fontLigatures": true,
   "window.zoomLevel": 0,
   "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "explorer.confirmDelete": false,
   "workbench.editor.showTabs": true,
   "workbench.list.automaticKeyboardNavigation": false,
   "editor.minimap.enabled": true,
   "workbench.activityBar.visible": true,
   "workbench.iconTheme": "vscode-great-icons",
-  "workbench.colorTheme": "Atom One Dark",
+  "workbench.colorTheme": "Gruvbox Dark (Medium)",
   // "oneDarkPro.editorTheme": "oneDarkProFlat",
   "window.menuBarVisibility": "toggle",
   "terminal.integrated.shell.linux": "/bin/zsh",
@@ -47,11 +56,11 @@
   //   }
   // },
   /**
-   ** ---- Terminal Settings ----
+   ** ---- Terminal Settings/Editor Colors ----
    **/
   "workbench.colorCustomizations": {
     // The background is optional
-    "terminal.background": "#323336",
+    "terminal.background": "#131314",
     "terminalCursor.background": "#282a36",
     "terminalCursor.foreground": "#97979b",
     "terminal.selectionBackground": "#97979b33",
@@ -75,7 +84,7 @@
     "terminal.ansiBrightWhite": "#eff0eb",
     // "editorBracketMatch.background": "#acacac9f",
     // "editorBracketMatch.border": "#ffffff",
-    "editor.selectionBackground": "#5aa9dd7c", //Current selected text
+    "editor.selectionBackground": "#e0e0e03a", //Current selected text
     "editor.selectionHighlightBackground": "#ff00005b", //Same content as selection
     //"editor.findMatchBackground": "#00cc44a8", //Current SEARCH MATCH
     "editor.findMatchHighlightBackground": "#ad5400a1", //Other SEARCH MATCHES
@@ -85,18 +94,20 @@
     "[Atom One Dark]": {
       "editor.background": "#1e2127"
     },
-    "[Horizon Italic]": {
-      "editor.background": "#1f2125"
+    "[One Monokai]": {
+      "editor.background": "#1f2125",
+      "editor.lineHighlightBackground": "#101113"
     }
   },
   "terminal.external.osxExec": "iterm2",
   "terminal.integrated.shell.osx": "/bin/zsh",
-  "terminal.integrated.fontFamily": "Hack Nerd Font",
-  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontFamily": "DroidSansMono Nerd Font, Book",
+  "terminal.integrated.fontSize": 14,
   "vsicons.dontShowNewVersionMessage": true,
   /**
    ** ---- Python Settings ----
    **/
+  "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Args": [
     "--ignore=E203",
@@ -109,21 +120,19 @@
   ],
   "python.languageServer": "Microsoft",
   "python.formatting.provider": "black",
-  "python.formatting.blackArgs": ["--line-length", "120"],
+  "python.formatting.blackArgs": [
+    "--line-length",
+    "120"
+  ],
   "code-runner.executorMap": {
     "python": "$pythonPath -u $fullFileName"
   },
-  /**
-   ** ---- C/CPP Settings ----
-   **/
   "C_Cpp.clang_format_fallbackStyle": "Mozilla",
   "C_Cpp.default.cStandard": "c99",
   "C_Cpp.default.cppStandard": "c++11",
-  // "C_Cpp.default.intelliSenseMode": "gcc-x64",
-  "C_Cpp.clang_format_style": "{BasedOnStyle: Google, ColumnLimit: 0, UseTab: Never, IndentWidth: 4, TabWidth: 4}",
+  "C_Cpp.clang_format_style": "{BasedOnStyle: Google, ColumnLimit: 0, UseTab: Never, IndentWidth: 2, TabWidth: 2}",
   "code-runner.showExecutionMessage": false,
   "code-runner.clearPreviousOutput": true,
-  "python.linting.enabled": true,
   "files.associations": {
     "*.gpl": "cpp",
     "*.js": "javascriptreact",
@@ -134,6 +143,7 @@
   /**
    ** ---- Javascript Settings ----
    **/
+  "javascript.validate.enable": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -151,9 +161,8 @@
   **/
   "r.sessionWatcher": true,
   "r.bracketedPaste": true,
-  "r.linting.enable": true,
+  "r.linting.enable": false,
   "r.rterm.mac": "/Library/Frameworks/Python.framework/Versions/3.8/bin/radian",
-
   /** ---- Better Comments tag colors ----
    **/
   "better-comments.tags": [
@@ -191,10 +200,12 @@
   /**
    ** ---- Vim/Neovim Settings ----
    **/
-  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
-  "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
-  "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/init.vim",
-  "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.vim",
+  //"vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+  //"vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+  //"vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/init.vim",
+  //"vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.vim",
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+  "vscode-neovim.useWSL": true,
   /**
    ** ---- Dart / Flutter Settings ----
    **/
@@ -259,21 +270,20 @@
     {
       "name": "bibtex",
       "command": "bibtex",
-      "args": ["out.nosync/%DOCFILE%"]
+      "args": [
+        "out.nosync/%DOCFILE%"
+      ]
     }
   ],
   "[latex]": {
     "editor.formatOnSave": false
   },
-  "settingsSync.ignoredSettings": ["vscode-neovim.neovimInitPath"],
+  "settingsSync.ignoredSettings": [
+    "vscode-neovim.neovimInitPath"
+  ],
   /**
    ** ---- Gitlens Settings ----
    **/
-  "gitlens.views.repositories.location": "gitlens",
-  "gitlens.views.fileHistory.location": "gitlens",
-  "gitlens.views.lineHistory.location": "gitlens",
-  "gitlens.views.compare.location": "gitlens",
-  "gitlens.views.search.location": "gitlens",
   "gitlens.mode.statusBar.alignment": "left",
   "gitlens.statusBar.alignment": "left",
   "gitlens.currentLine.enabled": false,
@@ -318,7 +328,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "cSpell.userWords": [
     "Highcharts",
@@ -906,5 +916,10 @@
       "type": "command",
       "command": "workbench.action.toggleZenMode"
     }
-  ]
+  ],
+  "gitlens.views.repositories.enabled": true,
+  "gitlens.views.repositories.includeWorkingTree": true,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

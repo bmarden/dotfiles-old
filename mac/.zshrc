@@ -6,12 +6,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Sets up Homebrew-managed zsh site-functions on FPATH
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-  autoload -Uz compinit
-  compinit
-fi
+#if type brew &>/dev/null; then
+#  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+#  autoload -Uz compinit
+#  compinit
+#fi
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -61,9 +60,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 path+=(/Users/bmarden/development/flutter/bin /Users/bmarden/Library/Android/sdk/platform-tools ~/bin)
-path+=(~/developmentflutter/.pub-cache/bin)
-#export PATH="$PATH:/Users/bmarden/development/flutter/bin:/Users/bmarden/Library/Android/sdk/platform-tools:~/bin"
-#export PATH="$PATH":"$HOME/development/flutter/.pub-cache/bin"
+path+=(~/developmentflutter/.pub-cache/bin /Users/bmarden/Library/Python/3.8/bin)
 export PATH
 
 # Activate vi / vim mode:
@@ -87,3 +84,9 @@ zle-line-init() { zle-keymap-select 'beam'}
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/bmarden/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+
+# nvm setup
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+

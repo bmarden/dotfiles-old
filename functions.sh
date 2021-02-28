@@ -20,7 +20,7 @@ function linkDotfile {
 	fi
 
 	echo "Creating new symlink from ${dotfile} to  ${dest}"
-	# ln -s "${dotfile}" "${dest}"
+	ln -s "${dotfile}" "${dest}"
 }
 
 function setupZsh {

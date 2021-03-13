@@ -28,8 +28,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
   CUSTOM_NVIM_PATH=/usr/local/bin/nvim
   # Install neovim  
-  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o /tmp/nvim.appimage
-  sudo mv /tmp/nvim.appimage ${CUSTOM_NVIM_PATH}
+  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+  sudo mv nvim.appimage ${CUSTOM_NVIM_PATH}
   chmod +x ${CUSTOM_NVIM_PATH}
   
   

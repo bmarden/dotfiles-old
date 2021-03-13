@@ -28,6 +28,8 @@ function setupZsh {
     sudo apt install -y zsh
   fi
 
+  ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+
   (cd $HOME && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended)
 
   # Install zsh-autosuggestions

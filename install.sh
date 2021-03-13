@@ -7,7 +7,7 @@ source functions.sh
 
 # Get the OS type
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  dotfilePath='linux'
+  dotfilePath="$HOME/dotfiles/linux"
   sudo apt update
 
 
@@ -48,7 +48,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
   
 elif [[ $OSTYPE == "darwin"* ]]; then 
-  dotfilePath='mac'
+  dotfilePath="$HOME/dotfiles/mac"
 
   # Install Brew Packages
   brew install python3
@@ -70,6 +70,9 @@ elif [[ $OSTYPE == "darwin"* ]]; then
 
 fi
 
+# Setup zsh config
+setupZsh
+
 # link dotfiles
 linkDotfile "$dotfilePath/.zshrc" "$HOME/.zshrc"
 linkDotfile "$dotfilePath/.gitconfig" "${HOME}/.gitconfig"
@@ -80,8 +83,6 @@ linkDotfile .tmux.conf "${HOME}/.tmux.conf"
 # Setup nvim configuration
 setupNvim
 
-# Setup zsh config
-setupZsh
 
 figlet "... Done!" | lolcat
   

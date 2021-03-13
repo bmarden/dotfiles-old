@@ -1,4 +1,4 @@
-let plugPath = stdpath('data') . '/plugged'
+let plugPath="${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim"
   " auto-install vim-plug
 if empty(plugPath)
   silent !curl -fLo plugPath --create-dirs

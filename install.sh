@@ -80,5 +80,8 @@ linkDotfile .tmux.conf "${HOME}/.tmux.conf"
 # Setup nvim configuration
 setupNvim
 
+# Setup zsh config
+setupZsh
+
 figlet "... Done!" | lolcat
   

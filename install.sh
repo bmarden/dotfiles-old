@@ -71,7 +71,7 @@ elif [[ $OSTYPE == "darwin"* ]]; then
 fi
 
 # link dotfiles
-linkDotFile "$dotfilePath/.zshrc" "$HOME/.zshrc"
+linkDotfile "$dotfilePath/.zshrc" "$HOME/.zshrc"
 linkDotfile "$dotfilePath/.gitconfig" "${HOME}/.gitconfig"
 linkDotfile .p10k.zsh "${HOME}/.p10k.zsh"
 linkDotfile .inputrc "${HOME}/.inputrc"

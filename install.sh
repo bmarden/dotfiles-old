@@ -76,9 +76,9 @@ setupZsh
 # link dotfiles
 linkDotfile "$dotfilePath/.zshrc" "$HOME/.zshrc"
 linkDotfile "$dotfilePath/.gitconfig" "${HOME}/.gitconfig"
-linkDotfile .p10k.zsh "${HOME}/.p10k.zsh"
-linkDotfile .inputrc "${HOME}/.inputrc"
-linkDotfile .tmux.conf "${HOME}/.tmux.conf"
+linkDotfile "$HOME/dotfiles/.p10k.zsh" "${HOME}/.p10k.zsh"
+linkDotfile "$HOME/dotfiles/.inputrc" "${HOME}/.inputrc"
+linkDotfile "$HOME/dotfiles/.tmux.conf" "${HOME}/.tmux.conf"
 
 # Setup nvim configuration
 setupNvim

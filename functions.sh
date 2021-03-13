@@ -26,7 +26,11 @@ function linkDotfile {
 function setupZsh {
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo apt install -y zsh
+
+    # set zsh as default shell
+    chsh -s $(which zsh)
   fi
+  
 
   ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 

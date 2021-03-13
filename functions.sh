@@ -3,7 +3,7 @@ function linkDotfile {
 	dest=${2}
 	dateStr=$(date +%Y-%m-%d-%H%M)
 
-	if [ -h ${dotfile} ]; then
+	if [ -h ${dest} ]; then
 		# Existing symlink
 		echo "Removing existing symlink: ${dest}"
 		rm "${dest}"

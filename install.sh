@@ -7,7 +7,7 @@ source functions.sh
 
 # Get the OS type
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  dotfilePath = 'linux/'
+  dotfilePath='linux/'
   sudo apt update
 
 
@@ -17,14 +17,14 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   installAptPackage vim 
   installAptPackage xclip
   installAptPackage valgrind
-  installAptPackage texlive-full
-
+  installAptPackage texlive-latex-extra
+  installAptPackage htop
   # Python
   sudo apt install -y python3-venv python3-pip
 
   # Useless things
-  install figlet
-  install lolcat
+  installAptPackage figlet
+  installAptPackage lolcat
 
   CUSTOM_NVIM_PATH=/usr/local/bin/nvim
   # Install neovim  
@@ -48,7 +48,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
   
 elif [[ $OSTYPE == "darwin"* ]]; then 
-  dotfilePath = 'mac/'
+  dotfilePath='mac/'
 
   # Install Brew Packages
   brew install python3

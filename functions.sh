@@ -72,6 +72,9 @@ function installFonts {
 }
 
 function installAptPackage {
+  # Disable auto fail on error here
+  set +e
+
   which $1 &> /dev/null
 
   if [ $? -ne 0 ]; then
@@ -80,4 +83,7 @@ function installAptPackage {
   else
     echo "Already installed: ${1}"
   fi
+  
+  # Re enable fail on error
+  set -e
 }

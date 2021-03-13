@@ -7,7 +7,7 @@ source functions.sh
 
 # Get the OS type
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  dotfilePath='linux/'
+  dotfilePath='linux'
   sudo apt update
 
 
@@ -48,7 +48,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
   
 elif [[ $OSTYPE == "darwin"* ]]; then 
-  dotfilePath='mac/'
+  dotfilePath='mac'
 
   # Install Brew Packages
   brew install python3

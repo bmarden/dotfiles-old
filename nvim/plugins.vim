@@ -1,12 +1,14 @@
-let plugPath="${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim"
-  " auto-install vim-plug
-if empty(plugPath)
-  silent !curl -fLo plugPath --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
+let plug_install = 0
+let autoload_plug_path = stdpath('config') . '/autoload/plug.vim'
+if !filereadable(autoload_plug_path)
+    silent exe '!curl -fL --create-dirs -o ' . autoload_plug_path . 
+        \ ' https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+    execute 'source ' . fnameescape(autoload_plug_path)
+    let plug_install = 1
 endif
+unlet autoload_plug_path
 
-call plug#begin(plugPath)
+call plug#begin('~/.config/nvim/plugins')
 	Plug 'tpope/vim-commentary'
 	Plug 'junegunn/vim-easy-align'
 	Plug 'machakann/vim-highlightedyank'
@@ -38,8 +40,8 @@ endif
 
 call plug#end()
 
-" Automatically install missing plugins on startup
-autocmd VimEnter *
-  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \|   PlugInstall --sync | q
-  \| endif
+if plug_install
+    PlugInstall --sync
+endif
+unlet plug_install
+

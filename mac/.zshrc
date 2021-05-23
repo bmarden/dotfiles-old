@@ -5,67 +5,107 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Sets up Homebrew-managed zsh site-functions on FPATH
-#if type brew &>/dev/null; then
-#  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-#  autoload -Uz compinit
-#  compinit
-#fi
+path+=($HOME/development/flutter/bin $HOME/Library/Android/sdk/platform-tools $HOME/bin /usr/local/bin)
+path+=($HOME/developmentflutter/.pub-cache/bin $HOME/Library/Python/3.8/bin /usr/local/go/bin $HOME/.dotnet/tools)
+export PATH
 
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
 
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/bmarden/.oh-my-zsh"
+source "$HOME/.zinit/bin/zinit.zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-    git
-    zsh-autosuggestions
-)
-        
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zinit-zsh/z-a-rust \
+    zinit-zsh/z-a-as-monitor \
+    zinit-zsh/z-a-patch-dl \
+    zinit-zsh/z-a-bin-gem-node
 
-source $ZSH/oh-my-zsh.sh
+### End of Zinit's installer chunk
+setopt interactive_comments hist_ignore_dups  octal_zeroes   no_prompt_cr  notify
+setopt no_hist_no_functions no_always_to_end  append_history list_packed
+setopt inc_append_history   complete_in_word  no_auto_menu   auto_pushd
+setopt pushd_ignore_dups    no_glob_complete  no_glob_dots   c_bases
+setopt numeric_glob_sort    share_history  promptsubst    auto_cd
+setopt rc_quotes
+autoload -Uz allopt zed zmv zcalc colors
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:kill:*'   force-list always
+zstyle ":completion:*:descriptions" format "%B%d%b"
+zstyle ':completion:*:*:*:default' menu yes select search
+zstyle ':completion:*:*:*:default' menu yes select
 
-# User configuration
+zinit wait lucid light-mode for \
+  atinit"zicompinit; zicdreplay" \
+      zdharma/fast-syntax-highlighting \
+  atload"_zsh_autosuggest_start" \
+      zsh-users/zsh-autosuggestions \
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh" 
-alias cursem="cd $HOME/Dropbox/School/fa2020_csu/"
+zinit light zsh-users/zsh-completions
+zinit light pawel-slowik/zsh-term-title
+
+zinit light zsh-users/zsh-completions
+# For GNU ls (the binaries can be gls, gdircolors, e.g. on OS X when installing the
+# coreutils package from Homebrew; you can also use https://github.com/ogham/exa)
+
+zinit pack for ls_colors
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+
+# Get git plugin from oh-my-zsh
+# Load OMZ Git library
+zinit snippet OMZL::git.zsh
+
+# Load Git plugin from OMZ
+zinit snippet OMZP::git
+zinit cdclear -q # <- forget completions provided up to this moment
+setopt promptsubst
+
+# Load theme from OMZ
+# zinit snippet OMZT::gnzh
+
+# Load normal GitHub plugin with theme depending on OMZ Git library
+# zinit light NicoSantangelo/Alpharized
+
+# Alias section
 alias vim="nvim"
 alias ivim="vim ~/.config/nvim/init.vim"
 alias startgp="launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
 alias stopgp="launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*"
-#
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+alias ls="gls -F --color"
+alias ll="gls -lF --color"
+alias la="gls -alF --color"
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-path+=(/Users/bmarden/development/flutter/bin /Users/bmarden/Library/Android/sdk/platform-tools ~/bin)
-path+=(~/developmentflutter/.pub-cache/bin /Users/bmarden/Library/Python/3.8/bin)
-export PATH
+
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/bmarden/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+
+# nvm setup
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Activate vi / vim mode:
 set -o vi
+# Set reverse search
+bindkey '^R' history-incremental-search-backward
 
+# Set colored manpages
+export MANPAGER='nvim +Man!'
 # Remove delay when entering normal mode (vi)
 KEYTIMEOUT=5
 
@@ -81,12 +121,3 @@ zle -N zle-keymap-select
 
 # Start with beam shape cursor on zsh startup and after every command.
 zle-line-init() { zle-keymap-select 'beam'}
-
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/bmarden/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
-
-# nvm setup
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-

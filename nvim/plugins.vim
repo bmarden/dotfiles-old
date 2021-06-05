@@ -23,6 +23,7 @@ call plug#begin('~/.config/nvim/plugins')
 		Plug 'joshdick/onedark.vim'
 		Plug 'ayu-theme/ayu-vim'
 		Plug 'sainnhe/sonokai'
+		Plug 'owozsh/amora'
 
 		" Status line
 		Plug 'itchyny/lightline.vim'

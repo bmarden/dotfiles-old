@@ -18,7 +18,7 @@ if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
-
+typeset -g HISTSIZE=290000 SAVEHIST=290000 HISTFILE=~/.zhistory ABSD=${${(M)OSTYPE:#*(darwin|bsd)*}:+1}
 source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
@@ -38,6 +38,7 @@ setopt no_hist_no_functions no_always_to_end  append_history list_packed
 setopt inc_append_history   complete_in_word  no_auto_menu   auto_pushd
 setopt pushd_ignore_dups    no_glob_complete  no_glob_dots   c_bases
 setopt numeric_glob_sort    share_history  promptsubst    auto_cd
+setopt extended_history
 setopt rc_quotes
 autoload -Uz allopt zed zmv zcalc colors
 zstyle ':completion:*:*:kill:*' menu yes select
@@ -58,13 +59,22 @@ zinit light pawel-slowik/zsh-term-title
 zinit pack for ls_colors
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
+zinit light zsh-users/zsh-history-substring-search
+zinit snippet OMZ::lib/key-bindings.zsh
+zinit wait lucid for \
+  OMZ::plugins/common-aliases \
+  OMZ::plugins/copydir \
+  OMZ::plugins/cp \
+  OMZ::plugins/encode64 \
+  OMZ::plugins/extract \
+  OMZ::plugins/jsontools \
 # Get git plugin from oh-my-zsh
 # Load OMZ Git library
 zinit snippet OMZL::git.zsh
 
 # Load Git plugin from OMZ
 zinit snippet OMZP::git
-zinit cdclear -q # <- forget completions provided up to this moment
+# zinit cdclear -q # <- forget completions provided up to this moment
 setopt promptsubst
 
 # Load theme from OMZ

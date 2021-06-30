@@ -4,7 +4,6 @@
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Vim keybindings for the terminal
-set -o vi
 #bindkey -v
 
 PATH=$PATH:~/bin:~/development/flutter/bin:/usr/lib/dart/bin:/home/bmarden/Android/Sdk/platform-tools:/usr/local/texlive/2020/bin/x86_64-linux
@@ -92,14 +91,15 @@ export NVM_DIR="$HOME/.nvm"
 # Example aliases
 alias vim='nvim'
 alias vimdiff='nvim -d'
-alias cursem="cd $HOME/Dropbox/School/fa2020_csu/"
-alias john='~/Programs/JohnTheRipper/run/john'
-alias python='python3'
 alias ivim="vim $HOME/.config/nvim/init.vim"
+alias ikssh='eval "$(ssh-agent -s)" && ssh-add ~/.ssh/ik-id_ed25519'
 alias pip='pip3'
 alias ls="ls -F --color"
 alias ll="ls -lF --color"
 alias la="ls -alF --color"
+
+# Set vim keybindings
+set -o vi
 
 # Remove delay when entering normal mode (vi)
 KEYTIMEOUT=5

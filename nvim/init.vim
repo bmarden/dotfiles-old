@@ -12,8 +12,8 @@ if exists('g:vscode')
   source $HOME/.config/nvim/plug-config/easymotion.vim
 else
   " Theme
-  "source $HOME/.config/nvim/themes/sonokai.vim
-  source $HOME/.config/nvim/themes/amora.vim 
+  source $HOME/.config/nvim/themes/sonokai.vim
+  "source $HOME/.config/nvim/themes/amora.vim 
 
   " Plugin configurations
   source $HOME/.config/nvim/plug-config/sneak.vim

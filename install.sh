@@ -25,6 +25,10 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   # Install Dropbox
   cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 
+  # Install nvm
+  wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+
+
   # Useless things
   # installAptPackage figlet
   # installAptPackage lolcat

@@ -10,21 +10,28 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   dotfilePath="$HOME/dotfiles/linux"
   sudo apt update
 
-
+  printf("Installing apt pakages...\n")
   # apt programs to install
   installAptPackage curl
   installAptPackage git
   installAptPackage vim 
   installAptPackage xclip
   installAptPackage valgrind
-  installAptPackage texlive-latex-extra
+  # installAptPackage texlive-latex-extra
   installAptPackage htop
   # Python
-  sudo apt install -y python3-venv python3-pip
+  # sudo apt install -y python3-venv python3-pip
+
+  # Install Dropbox
+  cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+
+  # Install nvm
+  wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+
 
   # Useless things
-  installAptPackage figlet
-  installAptPackage lolcat
+  # installAptPackage figlet
+  # installAptPackage lolcat
 
   CUSTOM_NVIM_PATH=/usr/local/bin/nvim
   # Install neovim  

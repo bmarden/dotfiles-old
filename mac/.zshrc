@@ -5,8 +5,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-path+=($HOME/development/flutter/bin $HOME/Library/Android/sdk/platform-tools $HOME/bin /usr/local/bin)
-path+=($HOME/developmentflutter/.pub-cache/bin $HOME/Library/Python/3.8/bin /usr/local/go/bin $HOME/.dotnet/tools)
+export GOPATH=$HOME/go
+export GOROOT="/usr/local/opt/go/libexec"
+
+path=(/Users/bmarden/.local/bin /usr/local/opt/python@3.10/bin /Users/bmarden/Library/Python/3.10/bin /usr/local/bin /usr/local/sbin $HOME/bin /opt/homebrew/bin /opt/homebrew/sbin $path)
+path+=($HOME/.dotnet/tools $GOPATH/bin $GOROOT/bin $HOME/Library/Android/sdk/platform-tools)
 export PATH
 
 ### Added by Zinit's installer
@@ -44,6 +47,7 @@ zstyle ':completion:*:kill:*'   force-list always
 zstyle ":completion:*:descriptions" format "%B%d%b"
 zstyle ':completion:*:*:*:default' menu yes select search
 zstyle ':completion:*:*:*:default' menu yes select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 zinit wait lucid light-mode for \
   atinit"zicompinit; zicdreplay" \
@@ -84,6 +88,9 @@ alias stopgp="launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pan
 alias ls="gls -F --color"
 alias ll="gls -lF --color"
 alias la="gls -alF --color"
+alias gitdsq='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
+alias gitdsqdry='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && echo "$branch is merged into master and can be deleted"; done'
+alias chromedebug='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir="$HOME/Library/Application\ Support/Google/Chrome/Debug"'
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -95,9 +102,31 @@ alias la="gls -alF --color"
 HEROKU_AC_ZSH_SETUP_PATH=/Users/bmarden/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 
 # nvm setup
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+function load_nvm {
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+    [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+}
+
+load_nvm
+
+# nvm 
+#if [[ "x${TERM_PROGRAM}" != "xvscode" ]]; then
+#    load_nvm
+#fi
+
+autoload -U add-zsh-hook
+load_nvmrc() {
+  if [[ -f .nvmrc && -r .nvmrc  ]]; then
+    nvm use
+  elif [[ $(nvm version) != $(nvm version default) ]]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+
+# add-zsh-hook chpwd load_nvmrc
+load_nvmrc
 
 # Activate vi / vim mode:
 set -o vi
@@ -106,6 +135,7 @@ bindkey '^R' history-incremental-search-backward
 
 # Set colored manpages
 export MANPAGER='nvim +Man!'
+export ANDROID_SDK=$HOME/Library/Android/sdk
 # Remove delay when entering normal mode (vi)
 KEYTIMEOUT=5
 
@@ -121,3 +151,5 @@ zle -N zle-keymap-select
 
 # Start with beam shape cursor on zsh startup and after every command.
 zle-line-init() { zle-keymap-select 'beam'}
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

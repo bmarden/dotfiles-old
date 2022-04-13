@@ -1,7 +1,6 @@
 [user]
 	email = benvmarden@gmail.com
 	name = Ben Marden
-	signingkey = 72445973A6BE5B46
 [core]
 	editor = nvim
 [diff]
@@ -12,5 +11,3 @@
 	tool = vimdiff3
 [mergetool "vimdiff3"]
 	path = nvim
-[commit]
-	gpgsign = true

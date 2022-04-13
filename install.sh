@@ -59,32 +59,35 @@ elif [[ $OSTYPE == "darwin"* ]]; then
 
   # Install Brew Packages
   brew install python3
-  brew install --HEAD neovim
-  brew upgrade neovim --fetch-HEAD
+  brew install neovim
 
   # Install MacOS Applications
   brew cask install discord
   brew cask install visual-studio-code
   brew cask install iterm2
-  brew cask install dropbox
   brew cask install google-chrome
    
   # Add fonts tap
   brew tap homebrew/cask-fonts
   brew install font-jetbrains-mono-nerd-font
   brew install font-fira-code
-  
 
 fi
 
 # Setup zsh config
 setupZsh
 
+# create zsh directory if it doesn't exist
+if [ ! -d $HOME/zsh ]; then
+  mkdir $HOME/zsh
+fi
+
 # link dotfiles
 linkDotfile "$dotfilePath/.zshrc" "$HOME/.zshrc"
 linkDotfile "$dotfilePath/.gitconfig" "${HOME}/.gitconfig"
+linkDotfile "$HOME/dotfiles/zsh/alias.zsh" "$HOME/zsh/alias.zsh"
+linkDotfile "$HOME/dotfiles/zsh/env.zsh" "$HOME/zsh/env.zsh"
 linkDotfile "$HOME/dotfiles/.p10k.zsh" "${HOME}/.p10k.zsh"
-linkDotfile "$HOME/dotfiles/.inputrc" "${HOME}/.inputrc"
 linkDotfile "$HOME/dotfiles/.tmux.conf" "${HOME}/.tmux.conf"
 
 # Setup nvim configuration

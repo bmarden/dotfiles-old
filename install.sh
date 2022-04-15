@@ -11,21 +11,20 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   dotfilePath="$HOME/dotfiles/linux"
   sudo apt update
 
-  printf "Installing apt pakages...\n"
+  printf "Installing apt packages...\n"
   # apt programs to install
-  installAptPackage curl
-  # installAptPackage git
-  # installAptPackage vim 
-  # installAptPackage xclip
-  # installAptPackage valgrind
-  # installAptPackage texlive-latex-extra
-  installAptPackage htop
+  install_apt_pkg curl
+  # install_apt_pkg git
+  install_apt_pkg xclip
+  # install_apt_pkg texlive-latex-extra
+  install_apt_pkg htop
+  install_apt_pkg neovim
   # Python
   # sudo apt install -y python3-venv python3-pip
 
   # Useless things
-  installAptPackage figlet
-  installAptPackage lolcat
+  install_apt_pkg figlet
+  install_apt_pkg lolcat
 
   CUSTOM_NVIM_PATH=/usr/bin/nvim
   # Install neovim  
@@ -34,7 +33,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   # chmod +x ${CUSTOM_NVIM_PATH}
   
   
-  set -u
+  #set -u
   sudo update-alternatives --install /usr/bin/ex ex "${CUSTOM_NVIM_PATH}" 110
   sudo update-alternatives --install /usr/bin/vi vi "${CUSTOM_NVIM_PATH}" 110
   sudo update-alternatives --install /usr/bin/view view "${CUSTOM_NVIM_PATH}" 110
@@ -43,7 +42,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   
   # Setup and install fonts
   mkdir -p $HOME/.local/share/fonts
-  installFonts $HOME/.local/share/fonts
+  install_fonts $HOME/.local/share/fonts
   
   sudo apt upgrade -y
 
@@ -77,15 +76,15 @@ if [ ! -d $HOME/zsh ]; then
 fi
 
 # link dotfiles
-linkDotfile "$dotfilePath/.zshrc" "$HOME/.zshrc"
-linkDotfile "$dotfilePath/.gitconfig" "${HOME}/.gitconfig"
-linkDotfile "$HOME/dotfiles/zsh/alias.zsh" "$HOME/zsh/alias.zsh"
-linkDotfile "$HOME/dotfiles/zsh/env.zsh" "$HOME/zsh/env.zsh"
-linkDotfile "$HOME/dotfiles/.p10k.zsh" "${HOME}/.p10k.zsh"
-linkDotfile "$HOME/dotfiles/.tmux.conf" "${HOME}/.tmux.conf"
+link_dotfile "$dotfilePath/.zshrc" "$HOME/.zshrc"
+link_dotfile "$dotfilePath/.gitconfig" "${HOME}/.gitconfig"
+link_dotfile "$HOME/dotfiles/zsh/alias.zsh" "$HOME/zsh/alias.zsh"
+link_dotfile "$HOME/dotfiles/zsh/env.zsh" "$HOME/zsh/env.zsh"
+link_dotfile "$HOME/dotfiles/.p10k.zsh" "${HOME}/.p10k.zsh"
+link_dotfile "$HOME/dotfiles/.tmux.conf" "${HOME}/.tmux.conf"
 
 # Setup nvim configuration
-setupNvim
+setup_neovim
 
 
 figlet "... Done!" | lolcat

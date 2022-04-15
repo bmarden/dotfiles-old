@@ -1,4 +1,6 @@
-function linkDotfile {
+#!/bin/bash
+
+function link_dotfile() {
 	dotfile=${1}
 	dest=${2}
 	dateStr=$(date +%Y-%m-%d-%H%M)
@@ -23,7 +25,7 @@ function linkDotfile {
 	ln -s "${dotfile}" "${dest}"
 }
 
-function setupZsh {
+function setupZsh() {
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo apt install -y zsh
 
@@ -32,19 +34,20 @@ function setupZsh {
   fi
 }
 
-function setupNvim {
+function setup_neovim() {
   # Symlink each file nvim directory  
   for f in $(find nvim -type f); do 
     
     # Create the directory if it doesn't exist
-    path="$(dirname ${f})"
-    mkdir -p "$HOME/.config/$path"
+    config_path="$(dirname ${f})"
+    echo $config_path
+    mkdir -p "$HOME/.config/$config_path"
     
-    linkDotfile $(pwd)/${f} "$HOME/.config/${f}"
+    link_dotfile $(pwd)/${f} "$HOME/.config/${f}"
   done
 }
 
-function installFonts {
+function install_fonts() {
   path=${1} 
   
   (cd ${path} && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf)
@@ -63,7 +66,7 @@ function installFonts {
   (cd ${path} && curl -fLo "Hack Bold Italic Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/BoldItalic/complete/Hack%20Bold%20Italic%20Nerd%20Font%20Complete.ttf)
 }
 
-function installAptPackage {
+function install_apt_pkg() {
   # Disable auto fail on error here
   set +e
 
@@ -79,3 +82,4 @@ function installAptPackage {
   # Re enable fail on error
   set -e
 }
+

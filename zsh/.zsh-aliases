@@ -4,11 +4,13 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 alias vim="nvim"
+alias vi="nvim"
 alias ivim="vim ~/.config/nvim/init.vim"
 
-# alias ls="${p}ls -F --color"
-# alias ll="${p}ls -lF --color"
-# alias la="${p}ls -alF --color"
+alias ls="${p}ls -F --color"
+alias ll="${p}ls -lF --color"
+alias la="${p}ls -alF --color"
+alias laa="${p}ls -ld .?* --color"
 
 alias gitdsq='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 alias gitdsqdry='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && echo "$branch is merged into master and can be deleted"; done'

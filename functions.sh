@@ -1,8 +1,8 @@
 #!/bin/bash
 
 function link_dotfile() {
-	dotfile=${1}
-	dest=${2}
+	dotfile=${2}
+	dest=${3}
 	dateStr=$(date +%Y-%m-%d-%H%M)
 
 	if [ -h ${dest} ]; then
@@ -83,3 +83,10 @@ function install_apt_pkg() {
   set -e
 }
 
+function test_func() {
+  echo $1
+  echo $2
+  echo $3
+}
+
+$1 "$@"

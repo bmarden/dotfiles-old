@@ -16,7 +16,7 @@ alias gitdsq='git checkout -q master && git for-each-ref refs/heads/ "--format=%
 alias gitdsqdry='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && echo "$branch is merged into master and can be deleted"; done'
 
 # check current ports in use
-alias chkport="lsof -i -P | grep LISTEN | grep $1"
+alias checkport="lsof -i -P | grep LISTEN | grep $1"
 
 # handy to see what's taking up space in a directory
 alias dirspace="du -hs * | sort -h"
